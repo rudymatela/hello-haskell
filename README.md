@@ -23,6 +23,17 @@ I mainly use this for playing around with Haskell on Travis
   [Haskell](https://github.com/rudymatela/fitspec/commit/e2cca999684bbcb52843f7b7716a6d85c8f5ee73)
 [projects.](https://github.com/rudymatela/speculate/commit/56161fde03aea4a0d20c11eb4cee2cffa718ffd0)
 
+Useful links
+------------
+
+Useful links:
+
+* [Using Travis CI with Haskell Stack](https://docs.haskellstack.org/en/stable/travis_ci/);
+* [Multiple GHC Versions for Travis-CI](https://github.com/hvr/multi-ghc-travis);
+* [Stack only supports GHC >= 7.8](https://github.com/commercialhaskell/stack/issues/648);
+* [Travis-CI docs: Building a Haskell Project](https://docs.travis-ci.com/user/languages/haskell/)
+  (somewhat outdated).
+
 [build-status]: https://travis-ci.org/rudymatela/hello-haskell.svg?branch=master
 [build-log]:    https://travis-ci.org/rudymatela/hello-haskell
 

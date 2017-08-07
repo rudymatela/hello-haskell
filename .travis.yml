@@ -9,8 +9,6 @@ cache:
   - $HOME/.cabal
   - $HOME/.stack
 
-# see: https://docs.haskellstack.org/en/stable/travis_ci/
-# see: https://github.com/hvr/multi-ghc-travis
 matrix:
   include:
   - ghc: '7.4'
