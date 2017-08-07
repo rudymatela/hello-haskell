@@ -8,16 +8,10 @@ cache:
   - $HOME/.ghc
   - $HOME/.cabal
 
-matrix:
-  include:
-    - ghc: '7.6'
-    - ghc: '7.4'
-      script: >
-        make      GHCFLAGS="-fno-warn-unrecognised-pragmas" &&
-        make test GHCFLAGS="-fno-warn-unrecognised-pragmas" &&
-        make haddock HADDOCKFLAGS=
 # see: https://docs.haskellstack.org/en/stable/travis_ci/
 # see: https://github.com/hvr/multi-ghc-travis
+matrix:
+  include:
     - ghc: '7.10'
       env: GHCVER=7.10.1 CABALVER=1.22
       addons: {apt: {sources: hvr-ghc, packages: [cabal-install-1.22,ghc-7.10.1]}}
