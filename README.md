@@ -14,5 +14,5 @@ It is also under continuous integration on Travis.
 I mainly use this for playing around with Haskell on Travis without polluting
 the commit history of my actual Haskell projects.
 
-[build-status]: https://travis-ci.org/rudymatela/leancheck.svg?branch=master
-[build-log]:    https://travis-ci.org/rudymatela/leancheck
+[build-status]: https://travis-ci.org/rudymatela/hello-haskell.svg?branch=master
+[build-log]:    https://travis-ci.org/rudymatela/hello-haskell
