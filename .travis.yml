@@ -12,24 +12,24 @@ cache:
 # see: https://github.com/hvr/multi-ghc-travis
 matrix:
   include:
-    - ghc: '7.8'
-      env: GHCVER=7.8.4 CABALVER=1.18
-      addons: {apt: {sources: hvr-ghc, packages: [cabal-install-1.18,ghc-7.8.4]}}
-    - ghc: '7.10'
-      env: GHCVER=7.10.3 CABALVER=1.22
-      addons: {apt: {sources: hvr-ghc, packages: [cabal-install-1.22,ghc-7.10.3]}}
-    - ghc: 'head'
-      env: GHCVER=head CABALVER=head
-      addons: {apt: {sources: hvr-ghc, packages: [cabal-install-head,ghc-head]}}
+  - ghc: '7.8'
+    env:                                     GHCVER=7.8.4        CABALVER=1.18
+    addons: {apt: {sources: hvr-ghc, packages: [ghc-7.8.4,  cabal-install-1.18]}}
+  - ghc: '7.10'
+    env:                                     GHCVER=7.10.3       CABALVER=1.22
+    addons: {apt: {sources: hvr-ghc, packages: [ghc-7.10.3, cabal-install-1.22]}}
+  - ghc: 'head'
+    env:                                     GHCVER=head       CABALVER=head
+    addons: {apt: {sources: hvr-ghc, packages: [ghc-head, cabal-install-head]}}
 
 before_install:
-  - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
-  - ghc --version
-  - cabal --version
+- export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
+- ghc --version
+- cabal --version
 
 script:
-  - make && make test && make haddock HADDOCKFLAGS=
-  - cabal test
+- make && make test && make haddock HADDOCKFLAGS=
+- cabal test
 
 notifications:
   email:
