@@ -55,6 +55,7 @@ matrix:
     - ghc --version
     - cabal --version
     - rm -f ~/.cabal/config && cabal update
+    - cabal install Cabal
     script:
     - make && make test && make haddock HADDOCKFLAGS=
     - cabal test
@@ -66,6 +67,7 @@ matrix:
     - ghc --version
     - cabal --version
     - rm -f ~/.cabal/config && cabal update
+    - cabal install Cabal
     script:
     - make && make test && make haddock HADDOCKFLAGS=
     - cabal test
@@ -77,6 +79,7 @@ matrix:
     - ghc --version
     - cabal --version
     - rm -f ~/.cabal/config && cabal update
+    - cabal install Cabal
     script:
     - make && make test && make haddock HADDOCKFLAGS=
     - cabal test
@@ -88,6 +91,7 @@ matrix:
     - ghc --version
     - cabal --version
     - rm -f ~/.cabal/config && cabal update
+    - cabal install Cabal
     script:
     - make && make test && make haddock HADDOCKFLAGS=
     - cabal test
