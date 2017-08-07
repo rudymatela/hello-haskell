@@ -29,7 +29,7 @@ matrix:
     env:                                     GHCVER=8.0.2        CABALVER=1.24
     addons: {apt: {sources: hvr-ghc, packages: [ghc-8.0.2,  cabal-install-1.24]}}
   - ghc: 'head'
-    env: STACKFLAGS=--skip-ghc-check         GHCVER=head       CABALVER=head
+    env:                                     GHCVER=head       CABALVER=head
     addons: {apt: {sources: hvr-ghc, packages: [ghc-head, cabal-install-head]}}
 
 before_install:
@@ -48,7 +48,7 @@ before_install:
 script:
 - make && make test && make haddock HADDOCKFLAGS=
 - cabal test
-- stack --no-terminal $STACKFLAGS test
+- stack --no-terminal --skip-ghc-check test
 
 notifications:
   email:
