@@ -2,17 +2,23 @@
 -- Distributed under the 3-Clause BSD licence (see the file LICENSE).
 
 import Hello
+import Test.LeanCheck
+import Data.List (elemIndices)
+import System.Exit (exitFailure)
 
 main :: IO ()
 main = do
-  if testsOK
-    then putStrLn "+++ Tests passed."
-    else putStrLn "*** Tests failed!"
+  case elemIndices False (tests 360) of
+    [] -> putStrLn "Tests passed."
+    is -> do putStrLn ("Failed tests:" ++ show is)
+             exitFailure
 
-testsOK :: Bool
-testsOK = and
-  [ helloWorld == "Hello World!"
-  , hello "Haskell" == "Hello Haskell"
-  , hello "Curry"   == "Hello Curry"
-  , hello "Haskell Curry" == "Hello Haskell Curry"
+tests :: Int -> [Bool]
+tests n =
+  [ True
+  , helloWorld == "Hello World!"
+  , hello "Haskell" == "Hello Haskell."
+  , hello "Curry"   == "Hello Curry."
+  , hello "Haskell Curry" == "Hello Haskell Curry."
+  , holds n $ \name -> hello name == "Hello " ++ name ++ "."
   ]
