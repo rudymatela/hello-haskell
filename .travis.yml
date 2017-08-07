@@ -11,10 +11,6 @@ cache:
 matrix:
   include:
     - ghc: '7.6'
-      script: >
-        make      GHCFLAGS="-fno-warn-unrecognised-pragmas" &&
-        make test GHCFLAGS="-fno-warn-unrecognised-pragmas" &&
-        make haddock HADDOCKFLAGS=
     - ghc: '7.4'
       script: >
         make      GHCFLAGS="-fno-warn-unrecognised-pragmas" &&
