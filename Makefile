@@ -39,6 +39,9 @@ list-hs:
 list-objs:
 	$(LISTOBJS)
 
+test-sdist:
+	./tests/test-sdist
+
 test-via-cabal:
 	cabal test
 
