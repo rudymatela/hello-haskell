@@ -74,6 +74,7 @@ matrix:
     - cabal --version
     - rm -f ~/.cabal/config && cabal update
     - cabal install Cabal==1.18.*
+    - cabal install leancheck
     script:
     - make && make test && make haddock HADDOCKFLAGS=
     - cabal test
