@@ -1,7 +1,6 @@
 # .travis.yml file for hello-haskell
 
-# language: haskell
-language:
+language: c # not really
 
 notifications:
   email:
