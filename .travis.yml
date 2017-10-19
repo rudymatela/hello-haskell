@@ -31,6 +31,7 @@ before_install:
 
 script:
 - make && make test && make haddock HADDOCKFLAGS=
+- make test-sdist
 - cabal test
 - stack --no-terminal --skip-ghc-check test
 
