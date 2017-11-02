@@ -62,6 +62,9 @@ legacy-test-via-cabal: # needs similarly named cabal wrappers
 	cabal clean  &&  cabal-ghc-7.8  configure --ghc-option=-dynamic  &&  cabal-ghc-7.8  test
 	cabal clean && cabal test
 
+prepare:
+	cabal update  &&  cabal install leancheck
+
 prepare-legacy-test:
 	cabal-ghc-8.0  update  &&  cabal-ghc-8.0  install leancheck
 	cabal-ghc-7.10 update  &&  cabal-ghc-7.10 install leancheck
