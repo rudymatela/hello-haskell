@@ -101,6 +101,6 @@ matrix:
     env:                   GHCVER=hugs
     addons: {apt: {packages: [hugs]}}
     before_install:
-    - hugs --version
+    - echo ":version" | hugs
     script:
     - make hugs-test
