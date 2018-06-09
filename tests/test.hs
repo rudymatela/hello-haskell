@@ -1,8 +1,11 @@
 -- Copyright (c) 2017-2018 Rudy Matela.
 -- Distributed under the 3-Clause BSD licence (see the file LICENSE).
-
+{-# LANGUAGE CPP #-}
 import Hello
+#ifndef __HUGS__
+-- TODO: release new LeanCheck to make this work
 import Test.LeanCheck
+#endif
 import Data.List (elemIndices)
 import System.Exit (exitFailure)
 
@@ -20,5 +23,7 @@ tests n =
   , hello "Haskell" == "Hello Haskell."
   , hello "Curry"   == "Hello Curry."
   , hello "Haskell Curry" == "Hello Haskell Curry."
+#ifndef __HUGS__
   , holds n $ \name -> hello name == "Hello " ++ name ++ "."
+#endif
   ]
