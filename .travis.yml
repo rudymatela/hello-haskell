@@ -99,7 +99,7 @@ matrix:
   # Hugs is not a GHC version.  But this is how travis can handle it.
   - ghc: 'hugs'
     env:                   GHCVER=hugs         CABALVER=
-    addons: {apt: {packages: [hugs]}
+    addons: {apt: {packages: [hugs]}}
     before_install:
     - hugs --version
     script:
