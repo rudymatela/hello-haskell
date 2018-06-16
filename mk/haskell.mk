@@ -19,6 +19,7 @@
 GHCIMPORTDIRS ?=
 GHCFLAGS ?=
 GHC ?= ghc
+GHCCMD = $(GHC) -i$(GHCIMPORTDIRS) $(GHCFLAGS)
 
 # Hugs Parameters
 HUGSIMPORTDIRS ?= "/usr/lib/hugs/packages/*"
@@ -45,8 +46,6 @@ HSS ?= $(shell find \( -path "./dist" -o -path "./Setup.hs" -o -path "./.stack-w
 
 
 # Implicit rules
-GHCCMD = $(GHC) -i$(GHCIMPORTDIRS) $(GHCFLAGS)
-
 %.hi %.o: %.hs
 	$(GHCCMD) $< && touch $@
 
