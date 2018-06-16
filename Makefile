@@ -16,9 +16,6 @@ GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = --no-print-missing-docs
 HUGSIMPORTDIRS = .:./src:./tests:/usr/lib/hugs/packages/*
-HUGSFLAGS = -98 -F"cpphs-hugs --noline -D__HUGS__" -h32M -P$(HUGSIMPORTDIRS)
-HUGS = hugs $(HUGSFLAGS)
-RUNHUGS = runhugs $(HUGSFLAGS)
 
 all: $(OBJS)
 
@@ -34,15 +31,9 @@ clean: clean-hi-o clean-haddock
 
 ghci: mk/All.ghci
 
-%.hugs: %.hs
-	$(HUGS) $<
-
-%.hugs-test: %.hs
-	$(RUNHUGS) $<
-
 hugs: src/Hello.hugs
 
-hugs-test: tests/test.hugs-test
+hugs-test: tests/test.runhugs
 
 install:
 	@echo "use \`cabal install' instead"
