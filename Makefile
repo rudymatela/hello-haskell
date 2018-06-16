@@ -98,7 +98,7 @@ upload-haddock:
 
 doc/index.html: $(ALLHS)
 	./mk/haddock-i base template-haskell | xargs \
-	haddock --html -odoc $(ALLHS) $(HADDOCKFLAGS) --title=leancheck
+	haddock --html -odoc $(ALLHS) $(HADDOCKFLAGS) --title=hello-haskell
 
 # NOTE: (very hacky!) the following target allows parallel compilation (-jN) of
 # eg and tests programs so long as they don't share dependencies _not_ stored
