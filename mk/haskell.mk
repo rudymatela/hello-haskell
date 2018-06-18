@@ -80,6 +80,20 @@ clean-hi-o:
 depend:
 	find $(ALL_HSS) | ./mk/ghcdeps -i$(GHCIMPORTDIRS) $(GHCFLAGS) > $(DEPMK)
 
+# haddock rules
+haddock: doc/index.html
+
+clean-haddock:
+	rm -f doc/*.{html,css,js,png,gif} README.html
+
+upload-haddock:
+	@echo "use \`cabal upload -d' instead"
+	@echo "(but 1st: cabal install --only-dependencies --enable-documentation)"
+	@echo "(to just compile docs: cabal haddock --for-hackage)"
+
+doc/index.html: $(LIB_HSS)
+	./mk/haddock-i base template-haskell | xargs \
+	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME)
 
 # lists all Haskell source files
 list-all-hss:

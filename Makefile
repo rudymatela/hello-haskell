@@ -75,20 +75,6 @@ markdown:
 	pandoc doc/tutorial.md -o doc/tutorial.html
 	pandoc doc/data-invariant.md -o doc/data-invariant.html
 
-haddock: doc/index.html
-
-clean-haddock:
-	rm -f doc/*.{html,css,js,png,gif} README.html
-
-upload-haddock:
-	@echo "use \`cabal upload -d' instead"
-	@echo "(but 1st: cabal install --only-dependencies --enable-documentation)"
-	@echo "(to just compile docs: cabal haddock --for-hackage)"
-
-doc/index.html: $(LIB_HSS)
-	./mk/haddock-i base template-haskell | xargs \
-	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=hello-haskell
-
 # NOTE: (very hacky!) the following target allows parallel compilation (-jN) of
 # eg and tests programs so long as they don't share dependencies _not_ stored
 # in src/ and tests/.  Runnable binaries should depend on mk/toplibs instead of
