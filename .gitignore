@@ -4,6 +4,7 @@ cabal.sandbox.config
 idx/
 dist/
 log/
+doc/
 *.swp
 *.swo
 *.swn
