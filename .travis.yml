@@ -22,6 +22,7 @@ before_install:
 - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
 - ghc --version
 - cabal --version
+- haddock --version
 - rm -f ~/.cabal/config && cabal update
 # Download and unpack the stack executable
 # "Once Travis whitelists the stack.dev files," simply include stack in the
