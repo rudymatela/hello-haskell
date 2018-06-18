@@ -93,7 +93,7 @@ upload-haddock:
 
 doc/index.html: $(LIB_HSS)
 	./mk/haddock-i base template-haskell | xargs \
-	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME)
+	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME) --package-name=$(PKGNAME)
 
 # lists all Haskell source files
 list-all-hss:
