@@ -43,6 +43,7 @@ LIST_ALL_HSS ?= find \( -path "./dist" -o -path "./.stack-work" \) -prune \
 LIB_HSS ?= $(shell $(LIST_LIB_HSS))
 ALL_HSS ?= $(shell $(LIST_ALL_HSS))
 
+PKGNAME = $(shell cat *.cabal | grep "^name:"    | sed -e "s/name: *//")
 
 
 # Implicit rules
@@ -87,5 +88,8 @@ list-all-hss:
 # lists library Haskell source files
 list-lib-hss:
 	@find $(LIB_HSS)
+
+show-pkgname:
+	@echo $(PKGNAME)
 
 include $(DEPMK)
