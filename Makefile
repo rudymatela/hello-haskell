@@ -7,19 +7,14 @@ TESTS = \
   tests/test
 EGS =
 BENCHS =
-LISTHS   = find src mk -name \*.hs
-LISTOBJS = $(LISTHS) | sed -e 's/.hs$$/.o/'
-ALLHS    = $(shell $(LISTHS))
-ALLOBJS  = $(shell $(LISTOBJS))
-OBJS = src/Hello.o
 GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = --no-print-missing-docs
 HUGSIMPORTDIRS = .:./src:./tests:/usr/lib/hugs/packages/*
 
-all: $(OBJS)
+all: mk/toplibs
 
-all-all: $(ALLOBJS)
+all-all: mk/All.o
 
 test: $(patsubst %,%.test,$(TESTS))
 
@@ -37,12 +32,6 @@ hugs-test: tests/test.runhugs
 
 install:
 	@echo "use \`cabal install' instead"
-
-list-hs:
-	$(LISTHS)
-
-list-objs:
-	$(LISTOBJS)
 
 test-sdist:
 	./tests/test-sdist
@@ -96,9 +85,9 @@ upload-haddock:
 	@echo "(but 1st: cabal install --only-dependencies --enable-documentation)"
 	@echo "(to just compile docs: cabal haddock --for-hackage)"
 
-doc/index.html: $(ALLHS)
+doc/index.html: $(LIB_HSS)
 	./mk/haddock-i base template-haskell | xargs \
-	haddock --html -odoc $(ALLHS) $(HADDOCKFLAGS) --title=hello-haskell
+	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=hello-haskell
 
 # NOTE: (very hacky!) the following target allows parallel compilation (-jN) of
 # eg and tests programs so long as they don't share dependencies _not_ stored
