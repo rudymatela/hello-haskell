@@ -70,6 +70,7 @@ matrix:
     - cabal install leancheck
     script:
     - make && make test && make haddock
+    - make test-sdist
     - cabal test
   - ghc: '7.6'
     env:                   GHCVER=7.6.3        CABALVER=1.18
@@ -83,6 +84,7 @@ matrix:
     - cabal install leancheck
     script:
     - make && make test && make haddock
+    - make test-sdist
     - cabal test
   - ghc: '7.4'
     env:                   GHCVER=7.4.2        CABALVER=1.18
@@ -96,6 +98,7 @@ matrix:
     - cabal install leancheck
     script:
     - make && make test && make haddock
+    - make test-sdist
     - cabal test
   # Hugs is not a GHC version.  But this is how travis can handle it.
   - ghc: 'hugs'
