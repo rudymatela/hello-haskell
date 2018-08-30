@@ -37,8 +37,8 @@ before_install:
 script:
 - make && make test && make haddock
 - make test-sdist
-- cabal test
-- stack --no-terminal --skip-ghc-check test
+- cabal test --ghc-option=-O0
+- stack --no-terminal --skip-ghc-check test --ghc-options=-O0
 
 matrix:
   include:
