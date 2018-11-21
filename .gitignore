@@ -13,7 +13,7 @@ doc/
 *.hi
 *.dyn_hi
 *.dyn_o
-tests/test
+test/test
 doc/*.html
 doc/*.css
 doc/*.js

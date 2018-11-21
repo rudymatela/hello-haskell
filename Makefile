@@ -4,13 +4,13 @@
 # License:     3-Clause BSD  (see the file LICENSE)
 # Maintainer:  Rudy Matela <rudy@matela.com.br>
 TESTS = \
-  tests/test
+  test/test
 EGS =
 BENCHS =
 GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = --no-print-missing-docs
-HUGSIMPORTDIRS = .:./src:./tests:/usr/lib/hugs/packages/*
+HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
 
 all: mk/toplibs
 
@@ -28,13 +28,13 @@ ghci: mk/All.ghci
 
 hugs: src/Hello.hugs
 
-hugs-test: tests/test.runhugs
+hugs-test: test/test.runhugs
 
 install:
 	@echo "use \`cabal install' instead"
 
 test-sdist:
-	./tests/test-sdist
+	./test/test-sdist
 
 test-via-cabal:
 	cabal test
@@ -74,8 +74,8 @@ hlint:
 	  .
 
 # NOTE: (very hacky!) the following target allows parallel compilation (-jN) of
-# eg and tests programs so long as they don't share dependencies _not_ stored
-# in src/ and tests/.  Runnable binaries should depend on mk/toplibs instead of
+# eg and test programs so long as they don't share dependencies _not_ stored
+# in src/ and test/.  Runnable binaries should depend on mk/toplibs instead of
 # actual Haskell source files
 mk/toplibs: mk/Toplibs.o
 	touch mk/toplibs

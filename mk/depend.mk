@@ -4,11 +4,16 @@ mk/All.o: \
 mk/Toplibs.o: \
   src/Hello.hs \
   mk/Toplibs.hs
+Setup.o: \
+  Setup.hs
+Setup: \
+  Setup.hs \
+  mk/toplibs
 src/Hello.o: \
   src/Hello.hs
-tests/test.o: \
-  tests/test.hs \
+test/test.o: \
+  test/test.hs \
   src/Hello.hs
-tests/test: \
-  tests/test.hs \
+test/test: \
+  test/test.hs \
   mk/toplibs
