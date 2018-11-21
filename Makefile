@@ -16,7 +16,7 @@ all: mk/toplibs
 
 all-all: mk/All.o
 
-test: $(patsubst %,%.run,$(TESTS))
+test: $(patsubst %,%.run,$(TESTS)) test-sdist
 
 %.run: %
 	./$<
