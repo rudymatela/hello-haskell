@@ -16,9 +16,9 @@ all: mk/toplibs
 
 all-all: mk/All.o
 
-test: $(patsubst %,%.test,$(TESTS))
+test: $(patsubst %,%.run,$(TESTS))
 
-%.test: %
+%.run: %
 	./$<
 
 clean: clean-hi-o clean-haddock
