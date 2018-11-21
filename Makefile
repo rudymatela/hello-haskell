@@ -34,7 +34,7 @@ install:
 	@echo "use \`cabal install' instead"
 
 test-sdist:
-	./test/test-sdist
+	./test/sdist
 
 test-via-cabal:
 	cabal test
