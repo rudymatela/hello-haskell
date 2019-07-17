@@ -113,6 +113,12 @@ list-all-hss:
 list-lib-hss:
 	@find $(LIB_HSS)
 
+bootstrap-haskell-mk:
+	@[ -d "$(DEST)" ] || (echo -e "error: no destination found\nusage: \`make bootstrap-haskell-mk DEST=path/to/prj'"; exit 1)
+	mkdir -p mk
+	cp mk/{haskell.mk,ghcdeps,haddock-i} $(DEST)/mk
+	touch $(DEST)/mk/depend.mk
+
 show-pkgname:
 	@echo $(PKGNAME)
 
