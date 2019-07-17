@@ -43,6 +43,9 @@ LIST_ALL_HSS ?= find \( -path "./dist" -o -path "./.stack-work" \) -prune \
 LIB_HSS ?= $(shell $(LIST_LIB_HSS))
 ALL_HSS ?= $(shell $(LIST_ALL_HSS))
 
+LIB_DEPS ?= base
+ALL_DEPS ?= $(LIB_DEPS)
+
 PKGNAME = $(shell cat *.cabal | grep "^name:"    | sed -e "s/name: *//")
 HADDOCK_VERSION = $(shell haddock --version | grep version | sed -e 's/.*version //;s/,.*//')
 HADDOCK_MAJOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/\..*//')
@@ -99,8 +102,8 @@ upload-haddock:
 	@echo "(on Arch Linux, use: cabal haddock --for-hackage --haddock-options=--optghc=-dynamic)"
 
 doc/index.html: $(LIB_HSS)
-	./mk/haddock-i base template-haskell | xargs \
-	haddock --html -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME) $(HADDOCK_PKG_NAME)
+	./mk/haddock-i $(LIB_DEPS) | xargs \
+	haddock --html --hyperlinked-source -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME) $(HADDOCK_PKG_NAME)
 
 # lists all Haskell source files
 list-all-hss:

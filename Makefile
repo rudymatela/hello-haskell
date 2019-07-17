@@ -11,6 +11,8 @@ GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = --no-print-missing-docs
 HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
+LIB_DEPS = base
+ALL_DEPS = $(LIB_DEPS) leancheck
 
 all: mk/toplibs
 
@@ -59,13 +61,13 @@ legacy-test-via-cabal: # needs similarly named cabal wrappers
 	cabal clean  &&  cabal test
 
 prepare:
-	cabal update  &&  cabal install leancheck
+	cabal update  &&  cabal install $(ALL_DEPS)
 
 prepare-legacy-test:
-	cabal-ghc-8.2  update  &&  cabal-ghc-8.2  install leancheck
-	cabal-ghc-8.0  update  &&  cabal-ghc-8.0  install leancheck
-	cabal-ghc-7.10 update  &&  cabal-ghc-7.10 install leancheck
-	cabal-ghc-7.8  update  &&  cabal-ghc-7.8  install leancheck
+	cabal-ghc-8.2  update  &&  cabal-ghc-8.2  install $(ALL_DEPS)
+	cabal-ghc-8.0  update  &&  cabal-ghc-8.0  install $(ALL_DEPS)
+	cabal-ghc-7.10 update  &&  cabal-ghc-7.10 install $(ALL_DEPS)
+	cabal-ghc-7.8  update  &&  cabal-ghc-7.8  install $(ALL_DEPS)
 
 hlint:
 	hlint \

@@ -14,10 +14,10 @@ doc/
 *.dyn_hi
 *.dyn_o
 test/test
-doc/*.html
-doc/*.css
-doc/*.js
-doc/*.png
-doc/*.gif
+doc/**/*.html
+doc/**/*.css
+doc/**/*.js
+doc/**/*.png
+doc/**/*.gif
 mk/toplibs
 README.html
