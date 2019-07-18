@@ -20,6 +20,7 @@ GHCIMPORTDIRS ?=
 GHCFLAGS ?=
 GHC ?= ghc
 GHCCMD = $(GHC) -i$(GHCIMPORTDIRS) $(GHCFLAGS)
+HADDOCK ?= haddock
 
 # Hugs Parameters
 HUGSIMPORTDIRS ?= "/usr/lib/hugs/packages/*"
@@ -47,7 +48,7 @@ LIB_DEPS ?= base
 ALL_DEPS ?= $(LIB_DEPS)
 
 PKGNAME = $(shell cat *.cabal | grep "^name:"    | sed -e "s/name: *//")
-HADDOCK_VERSION = $(shell haddock --version | grep version | sed -e 's/.*version //;s/,.*//')
+HADDOCK_VERSION = $(shell $(HADDOCK) --version | grep version | sed -e 's/.*version //;s/,.*//')
 HADDOCK_MAJOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/\..*//')
 HADDOCK_MINOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/[0-9]*\.\([0-9]*\).[0-9]*/\1/')
 HADDOCK_PKG_NAME = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
@@ -106,7 +107,7 @@ upload-haddock:
 
 doc/index.html: $(LIB_HSS)
 	./mk/haddock-i $(LIB_DEPS) | xargs \
-	haddock --html -odoc $(LIB_HSS) \
+	$(HADDOCK) --html -odoc $(LIB_HSS) \
 	  --title=$(PKGNAME) \
 	  $(HADDOCK_PKG_NAME) \
 	  $(HADDOCK_HLNK_SRC) \
