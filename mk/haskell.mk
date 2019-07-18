@@ -53,6 +53,9 @@ HADDOCK_MINOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/[0-9]*\.\([0-9]*\).[
 HADDOCK_PKG_NAME = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
                         || [ $(HADDOCK_MAJOR) -eq 2 -a $(HADDOCK_MINOR) -ge 20 ] \
                         && echo "--package-name=$(PKGNAME)")
+HADDOCK_HLNK_SRC = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
+                        || [ $(HADDOCK_MAJOR) -eq 2 -a $(HADDOCK_MINOR) -ge 17 ] \
+                        && echo "--hyperlinked-source")
 
 
 # Implicit rules
@@ -103,7 +106,12 @@ upload-haddock:
 
 doc/index.html: $(LIB_HSS)
 	./mk/haddock-i $(LIB_DEPS) | xargs \
-	haddock --html --hyperlinked-source -odoc $(LIB_HSS) $(HADDOCKFLAGS) --title=$(PKGNAME) $(HADDOCK_PKG_NAME)
+	haddock --html -odoc $(LIB_HSS) \
+	  --title=$(PKGNAME) \
+	  $(HADDOCK_PKG_NAME) \
+	  $(HADDOCK_HLNK_SRC) \
+	  $(HADDOCKFLAGS)
+
 
 # lists all Haskell source files
 list-all-hss:
