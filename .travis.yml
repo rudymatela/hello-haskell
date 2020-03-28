@@ -39,7 +39,6 @@ script:
 - make haddock
 - make test-sdist
 - cabal test --ghc-option=-O0
-- stack --resolver $STACKVER init
 - stack --resolver $STACKVER --no-terminal --skip-ghc-check test --ghc-options=-O0
 
 matrix:
