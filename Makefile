@@ -88,5 +88,22 @@ update-mk-on-other-projects:
 	./mk/install-on ../express
 	./mk/install-on ../speculate
 	./mk/install-on ../extrapolate
+	./mk/install-on ../lc-instances
+	./mk/install-on ../percent-format
+	./mk/install-on ../hspec-leancheck
+	./mk/install-on ../tasty-leancheck
+	./mk/install-on ../test-framework-leancheck
+
+make-depend-on-other-projects:
+	make -C ../leancheck depend
+	make -C ../fitspec depend
+	make -C ../express depend
+	make -C ../speculate depend
+	make -C ../extrapolate depend
+	make -C ../lc-instances depend
+	make -C ../percent-format depend
+	make -C ../hspec-leancheck depend
+	make -C ../tasty-leancheck depend
+	make -C ../test-framework-leancheck depend
 
 include mk/haskell.mk
