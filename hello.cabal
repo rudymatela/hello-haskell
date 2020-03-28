@@ -7,7 +7,7 @@ description:
   .
   Compilable via Makefile, cabal and stack.
 
-homepage:            https://github.com/rudymatela/leancheck#readme
+homepage:            https://github.com/rudymatela/hello-haskell#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Rudy Matela <rudy@matela.com.br>
