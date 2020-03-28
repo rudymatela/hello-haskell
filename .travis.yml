@@ -95,7 +95,7 @@ matrix:
     - cabal install Cabal==1.18.*
     - cabal install leancheck
     script:
-    - make && make test
+    - make GHCFLAGS= && make test GHCFLAGS=
     - make haddock HADDOCKFLAGS=
     - make test-sdist
     - cabal test
@@ -111,7 +111,7 @@ matrix:
     - cabal install Cabal==1.18.*
     - cabal install leancheck
     script:
-    - make && make test
+    - make GHCFLAGS= && make test GHCFLAGS=
     - make haddock HADDOCKFLAGS=
     - make test-sdist
     - cabal test
