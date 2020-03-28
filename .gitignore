@@ -4,6 +4,7 @@ cabal.sandbox.config
 stack.yaml.lock
 idx/
 dist/
+dist-newstyle/
 log/
 doc/
 *.swp

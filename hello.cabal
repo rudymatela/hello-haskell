@@ -26,6 +26,7 @@ extra-source-files: .gitignore
                   , mk/haddock-i
                   , mk/All.hs
                   , mk/Toplibs.hs
+                  , mk/install-on
                   , test/sdist
                   , stack.yaml
                   , .travis.yml

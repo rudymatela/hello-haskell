@@ -82,4 +82,11 @@ hlint:
 mk/toplibs: mk/Toplibs.o
 	touch mk/toplibs
 
+update-mk-on-other-projects:
+	./mk/install-on ../leancheck
+	./mk/install-on ../fitspec
+	./mk/install-on ../express
+	./mk/install-on ../speculate
+	./mk/install-on ../extrapolate
+
 include mk/haskell.mk
