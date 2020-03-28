@@ -26,7 +26,6 @@ extra-source-files: .gitignore
                   , mk/haddock-i
                   , mk/All.hs
                   , mk/Toplibs.hs
-                  , stack.yaml
                   , test/sdist
                   , .travis.yml
 tested-with: GHC==8.4, GHC==8.2, GHC==8.0
