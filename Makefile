@@ -106,4 +106,16 @@ make-depend-on-other-projects:
 	make -C ../tasty-leancheck depend
 	make -C ../test-framework-leancheck depend
 
+make-test-sdist-on-other-projects:
+	make -C ../leancheck test-sdist
+	make -C ../fitspec test-sdist
+	make -C ../express test-sdist
+	make -C ../speculate test-sdist
+	make -C ../extrapolate test-sdist
+	make -C ../lc-instances test-sdist
+	make -C ../percent-format test-sdist
+	make -C ../hspec-leancheck test-sdist
+	make -C ../tasty-leancheck test-sdist
+	make -C ../test-framework-leancheck test-sdist
+
 include mk/haskell.mk
