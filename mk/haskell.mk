@@ -118,8 +118,7 @@ clean-cabal:
 	rm -rf dist/ dist-newstyle/ cabal.project.local cabal.project.local~
 
 clean-stack:
-	rm -rf .stack-work/
-	rm -rf .stack.yaml.lock
+	rm -rf .stack-work/ stack.yaml.lock
 
 # lists all Haskell source files
 list-all-hss:
