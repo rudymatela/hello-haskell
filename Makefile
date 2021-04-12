@@ -23,7 +23,7 @@ test: $(patsubst %,%.run,$(TESTS)) test-sdist
 %.run: %
 	./$<
 
-clean: clean-hi-o clean-haddock
+clean: clean-hs
 	rm -f $(TESTS) $(BENCHS) $(EGS) mk/toplibs
 
 ghci: mk/All.ghci
