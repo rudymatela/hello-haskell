@@ -106,6 +106,10 @@ update-mk-on-other-projects:
 	./mk/install-on ../tasty-leancheck
 	./mk/install-on ../test-framework-leancheck
 
+update-travis-yml-on-other-projects:
+	./.copy-travis-matrix ../leancheck
+	./.copy-travis-matrix ../fitspec
+
 make-depend-on-other-projects:
 	make -C ../leancheck depend
 	make -C ../fitspec depend
