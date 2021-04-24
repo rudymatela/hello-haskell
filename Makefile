@@ -109,6 +109,15 @@ update-mk-on-other-projects:
 update-travis-yml-on-other-projects:
 	./.copy-travis-matrix ../leancheck
 	./.copy-travis-matrix ../fitspec
+	./.copy-travis-matrix ../express
+	./.copy-travis-matrix ../speculate
+	./.copy-travis-matrix ../extrapolate
+	./.copy-travis-matrix ../conjure
+	./.copy-travis-matrix ../lc-instances
+	./.copy-travis-matrix ../percent-format
+	./.copy-travis-matrix ../hspec-leancheck
+	./.copy-travis-matrix ../tasty-leancheck
+	./.copy-travis-matrix ../test-framework-leancheck
 
 make-depend-on-other-projects:
 	make -C ../leancheck depend
