@@ -26,11 +26,11 @@ jobs:
       - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
       - run: echo "with GHC ${{ matrix.ghc }} and Cabal ${{ matrix.cabal }}"
 
-      - name: Setup Haskell's GHC and Cabal
-        uses: haskell/actions/setup@v1
-        with:
-          ghc-version:   '${{ matrix.ghc   }}'
-          cabal-version: '${{ matrix.cabal }}'
+#      - name: Setup Haskell's GHC and Cabal
+#        uses: haskell/actions/setup@v1
+#        with:
+#          ghc-version:   '${{ matrix.ghc   }}'
+#          cabal-version: '${{ matrix.cabal }}'
 
       - run: ghc   --version
       - run: cabal --version
