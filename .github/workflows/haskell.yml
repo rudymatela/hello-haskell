@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - { ghc: latest , cabal: latest }
-          - { ghc: 8.8    , cabal: 3.0    }
-          - { ghc: 8.6    , cabal: 2.4    }
+          - { ghc: 'latest' , cabal: 'latest' }
+          - { ghc: '8.8'    , cabal: '3.0'    }
+          - { ghc: '8.6'    , cabal: '2.4'    }
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
@@ -45,8 +45,8 @@ jobs:
       - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
         uses: haskell/actions/setup@v1
         with: # lts-17.9
-          ghc-version: 8.10.4
-          cabal-version: 3.2
+          ghc-version: '8.10.4'
+          cabal-version: '3.2'
       - name: Check out repository
         uses: actions/checkout@v2
       - run: make test-via-stack
