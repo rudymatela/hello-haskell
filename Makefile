@@ -39,10 +39,12 @@ test-sdist:
 	./test/sdist
 
 test-via-cabal:
-	cabal test
+	cabal configure --enable-tests --enable-benchmarks --ghc-options="$(GHCFLAGS) -O0"
+	cabal build
+	cabal test test
 
 test-via-stack:
-	stack test
+	stack test hello:test:test --ghc-options="$(GHCFLAGS) -O0" --system-ghc --no-install-ghc --no-terminal
 
 test-via-everything: test test-via-cabal test-via-stack
 

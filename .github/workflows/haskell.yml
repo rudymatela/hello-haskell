@@ -28,7 +28,6 @@ jobs:
       - run: ghc   --version
       - run: hugs  --version
       - run: cabal --version
-      - run: stack --version
 
       - name: Check out repository
         uses: actions/checkout@v2
@@ -39,4 +38,11 @@ jobs:
       - run: make test
       - run: make test-sdist
       - run: make haddock
-      - run: cabal test --ghc-option=-O0
+      - run: make test-via-cabal
+
+  build-and-test-with-stack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - run: make test-via-stack
