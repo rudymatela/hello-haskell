@@ -34,8 +34,8 @@ Useful links:
 * [Travis-CI docs: Building a Haskell Project](https://docs.travis-ci.com/user/languages/haskell/)
   (somewhat outdated).
 
-[build-status]: https://github.com/rudymatela/hello-haskell/actions/workflows/haskell.yml/badge.svg
-[build-log]:    https://github.com/rudymatela/hello-haskell/actions/workflows/haskell.yml
+[build-status]: https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml/badge.svg
+[build-log]:    https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
