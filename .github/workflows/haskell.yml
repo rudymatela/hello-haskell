@@ -1,0 +1,27 @@
+# Haskell Workflow on GitHub actions
+#
+# 2021  Rudy Matela
+#
+# some docs: https://github.com/haskell/actions/tree/main/setup
+name: Haskell Workflow
+on: [push]
+jobs:
+  build-and-test:
+    strategy:
+      matrix:
+        include:
+          - {ghc: '8.8',  cabal: '3.0'}
+          - {ghc: '8.6',  cabal: '2.4'}
+    runs-on: ubuntu-latest
+    steps:
+      # broken into multiple lines to avoid ellipsis on github's web interface
+      - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
+      - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - run: ls ${{ github.workspace }}
+      - run: ghc --version
+      - run: cabal --version
+      - run: stack --version
