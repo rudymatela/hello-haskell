@@ -26,7 +26,6 @@ jobs:
           cabal-version: ${{ matrix.cabal }}
 
       - run: ghc   --version
-      - run: hugs  --version
       - run: cabal --version
 
       - name: Check out repository
