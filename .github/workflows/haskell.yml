@@ -26,3 +26,4 @@ jobs:
         uses: actions/checkout@v2
 
       - run: ls ${{ github.workspace }}
+      - run: pwd
