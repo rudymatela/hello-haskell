@@ -29,6 +29,7 @@ extra-source-files: .gitignore
                   , mk/install-on
                   , test/sdist
                   , stack.yaml
+                  , .github/workflows/haskell.yml
                   , .travis.yml
                   , .copy-travis-matrix
 tested-with: GHC==8.4, GHC==8.2, GHC==8.0
