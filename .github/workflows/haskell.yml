@@ -29,6 +29,7 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
+      - run: haddock --version || sudo apt-get install ghc-haddock
       - run: ghc   --version
       - run: cabal --version
 
