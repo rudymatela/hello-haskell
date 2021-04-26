@@ -1,9 +1,9 @@
-# Haskell Workflow on GitHub actions
+# Builds and tests this Haskell project on "GitHub Actions"
 #
 # 2021  Rudy Matela
 #
 # some docs: https://github.com/haskell/actions/tree/main/setup
-name: Haskell Workflow
+name: build
 on: [push]
 jobs:
   build-and-test:
