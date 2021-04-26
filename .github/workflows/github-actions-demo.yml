@@ -2,10 +2,11 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
-    matrix:
-      include:
-        - {ghc: '8.8',  cabal: '3.0'}
-        - {ghc: '8.6',  cabal: '2.4'}
+    strategy:
+      matrix:
+        include:
+          - {ghc: '8.8',  cabal: '3.0'}
+          - {ghc: '8.6',  cabal: '2.4'}
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
