@@ -33,9 +33,8 @@ jobs:
 #          ghc-version:   '${{ matrix.ghc   }}'
 #          cabal-version: '${{ matrix.cabal }}'
 
-      - run: ls /etc/apt/sources.list.d
-#      - run: rm /etc/apt/sources.list.d/*.list # avoid HTTPs errors on Jessie
-      - run: make --version || apt-get update
+#      - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
+#      - run: make --version || apt-get update
       - run: make --version || apt-get install make
 
       - run: ghc   --version
