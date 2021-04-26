@@ -42,6 +42,7 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
+      - run: cabal update
       - run: make install-dependencies
 
       - run: make
