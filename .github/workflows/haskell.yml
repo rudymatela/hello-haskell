@@ -33,7 +33,7 @@ jobs:
 #          ghc-version:   '${{ matrix.ghc   }}'
 #          cabal-version: '${{ matrix.cabal }}'
 
-      - run: sudo apt-get install make
+      - run: apt-get install make
 
       - run: ghc   --version
       - run: cabal --version
