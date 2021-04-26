@@ -42,9 +42,11 @@ jobs:
   build-and-test-with-stack:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
+        uses: haskell/actions/setup@v1
+        with: # lts-17.9
+          ghc-version: 8.10.4
+          cabal-version: 3.2
       - name: Check out repository
         uses: actions/checkout@v2
       - run: make test-via-stack
-      - with: # lts-17.9
-          ghc-version: 8.10.4
-          cabal-version: 3.2
