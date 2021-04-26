@@ -83,3 +83,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - run: make test-via-stack
+
+  build-and-test-with-hugs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: apt-get install hugs
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - run: make hugs-test
