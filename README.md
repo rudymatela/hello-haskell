@@ -9,7 +9,7 @@ An example library in [Haskell].  Compilable via:
 * [cabal]: `cabal build && cabal test`;
 * [stack]: `stack build && stack test`.
 
-It is also under continuous integration on [Travis].
+It is also under continuous integration on [Travis] and GitHub Actions.
 
 I mainly use this for playing around with Haskell on Travis
   [without](https://github.com/rudymatela/leancheck/commit/e7f7dcc771ef76a72d287d013e6cd49178295811)
