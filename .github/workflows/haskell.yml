@@ -17,11 +17,12 @@ jobs:
       # broken into multiple lines to avoid ellipsis on github's web interface
       - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
       - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
+      - run: echo "using GHC ${{ ghc-version }}, cabal ${{ cabal-version }} and stack ${{ stack-version }}"
+      - run: ghc --version
+      - run: cabal --version
+      - run: stack --version
 
       - name: Check out repository code
         uses: actions/checkout@v2
 
       - run: ls ${{ github.workspace }}
-      - run: ghc --version
-      - run: cabal --version
-      - run: stack --version
