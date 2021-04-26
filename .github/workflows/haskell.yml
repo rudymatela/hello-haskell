@@ -7,41 +7,8 @@ name: Haskell Workflow
 on: [push]
 jobs:
   build-and-test:
-    strategy:
-      matrix:
-        include:
-#          - { ghc: 'latest', cabal: 'latest' }
-#          - { ghc: '9.0',    cabal: '3.4' }
-          - { ghc: '8.10',   cabal: '3.2' }
-          - { ghc: '8.8',    cabal: '3.0' }
-          - { ghc: '8.6',    cabal: '2.4' } # ghcup's oldest supported cabal
-          - { ghc: '8.4',    cabal: '2.4' } # should be cabal: 2.2
-          - { ghc: '8.2',    cabal: '2.4' } # should be cabal: 2.0
-          - { ghc: '8.0',    cabal: '2.4' } # should be cabal: 1.24
-          - { ghc: '7.10',   cabal: '2.4' } # should be cabal: 1.22
-          - { ghc: '7.8',    cabal: '2.4' } # should be cabal: 1.22
     runs-on: ubuntu-latest
-    container: haskell:${{ matrix.ghc }}
     steps:
-      - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
-      - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
-      - run: echo "with GHC ${{ matrix.ghc }} and Cabal ${{ matrix.cabal }}"
-
-#      - name: Setup Haskell's GHC and Cabal
-#        uses: haskell/actions/setup@v1
-#        with:
-#          ghc-version:   '${{ matrix.ghc   }}'
-#          cabal-version: '${{ matrix.cabal }}'
-
-      - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
-      - run: make --version || apt-get update
-      - run: make --version || apt-get install make
-
-      - run: ghc   --version
-      - run: cabal --version
-
-      - name: Check out repository
-        uses: actions/checkout@v2
 
       - name: Cache ~/.cabal/packages
         uses: actions/cache@v2
@@ -61,6 +28,67 @@ jobs:
           restore-keys: v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
+
+      - run: ghc   --version
+      - run: cabal --version
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - run: cabal update
+      - run: make install-dependencies
+
+      - run: make
+      - run: make test
+      - run: make haddock
+      - run: make test-sdist
+      - run: make test-via-cabal
+
+
+  build-and-test-with-older-ghcs:
+    strategy:
+      matrix:
+        ghc:
+          - '9.0'
+          - '8.10'
+          - '8.8'
+          - '8.6'
+          - '8.4'
+          - '8.2'
+          - '8.0'
+          - '7.10'
+          - '7.8'
+    runs-on: ubuntu-latest
+    container: haskell:${{ matrix.ghc }}
+    steps:
+      - name: Cache ~/.cabal/packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.cabal/packages
+          key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('hello.cabal') }}
+          restore-keys: v1-${{ runner.os }}-cabal-packages-
+
+      - name: Cache ~/.cabal and ~/.ghc
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cabal
+            !~/.cabal/packages
+            ~/.ghc
+          key:          v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-${{ hashFiles('hello.cabal') }}
+          restore-keys: v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-
+
+      - run: du -hd3 ~/.cabal ~/.ghc || true
+
+      - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
+      - run: make --version || apt-get update
+      - run: make --version || apt-get install make
+
+      - run: ghc   --version
+      - run: cabal --version
+
+      - name: Check out repository
+        uses: actions/checkout@v2
 
       - run: cabal update
       - run: make install-dependencies
