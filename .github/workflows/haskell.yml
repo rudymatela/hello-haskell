@@ -70,30 +70,30 @@ jobs:
       - run: make haddock
       - run: make test-sdist
       - run: make test-via-cabal
-#
-#  build-and-test-with-stack:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
-#        uses: haskell/actions/setup@v1
-#        with: # lts-17.9
-#          ghc-version: '8.10.4'
-#          cabal-version: '3.2'
-#
-#      - uses: actions/cache@v2
-#        with:
-#          path: ~/.stack
-#          key:          v1-${{ runner.os }}-stack-${{ hashFiles('stack.yaml') }}
-#          restore-keys: v1-${{ runner.os }}-stack-
-#
-#      - name: Check out repository
-#        uses: actions/checkout@v2
-#      - run: make test-via-stack
-#
-#  build-and-test-with-hugs:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - run: sudo apt-get install hugs
-#      - name: Check out repository
-#        uses: actions/checkout@v2
-#      - run: make hugs-test
+
+  build-and-test-with-stack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
+        uses: haskell/actions/setup@v1
+        with: # lts-17.9
+          ghc-version: '8.10.4'
+          cabal-version: '3.2'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.stack
+          key:          v1-${{ runner.os }}-stack-${{ hashFiles('stack.yaml') }}
+          restore-keys: v1-${{ runner.os }}-stack-
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - run: make test-via-stack
+
+  build-and-test-with-hugs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install hugs
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - run: make hugs-test
