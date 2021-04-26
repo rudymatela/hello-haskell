@@ -13,6 +13,7 @@ HADDOCKFLAGS = --no-print-missing-docs
 HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
 LIB_DEPS = base
 ALL_DEPS = $(LIB_DEPS) leancheck
+CABAL_INSTALL = $(shell cabal --version | grep -q "version [0-2]\." && echo 'cabal install' || echo 'cabal v1-install')
 
 all: mk/toplibs
 
@@ -69,7 +70,7 @@ legacy-test-via-cabal: # needs similarly named cabal wrappers
 	cabal clean  &&  cabal test
 
 install-dependencies:
-	cabal v1-install $(ALL_DEPS)
+	$(CABAL_INSTALL) $(ALL_DEPS)
 
 prepare:
 	cabal update
