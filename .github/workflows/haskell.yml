@@ -11,14 +11,14 @@ jobs:
       matrix:
         include:
           - { ghc: 'latest', cabal: 'latest' }
-          - { ghc: '9.0',    cabal: '3.4' }
+#          - { ghc: '9.0',    cabal: '3.4' }
           - { ghc: '8.10',   cabal: '3.2' }
-          - { ghc: '8.8',    cabal: '3.0' }
-          - { ghc: '8.6',    cabal: '2.4' } # ghcup's oldest supported cabal
-          - { ghc: '8.4',    cabal: '2.4' } # should be cabal: 2.2
-          - { ghc: '8.2',    cabal: '2.4' } # should be cabal: 2.0
-          - { ghc: '8.0',    cabal: '2.4' } # should be cabal: 1.24
-          - { ghc: '7.10',   cabal: '2.4' } # should be cabal: 1.22
+#          - { ghc: '8.8',    cabal: '3.0' }
+#          - { ghc: '8.6',    cabal: '2.4' } # ghcup's oldest supported cabal
+#          - { ghc: '8.4',    cabal: '2.4' } # should be cabal: 2.2
+#          - { ghc: '8.2',    cabal: '2.4' } # should be cabal: 2.0
+#          - { ghc: '8.0',    cabal: '2.4' } # should be cabal: 1.24
+#          - { ghc: '7.10',   cabal: '2.4' } # should be cabal: 1.22
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
@@ -64,30 +64,30 @@ jobs:
       - run: make haddock
       - run: make test-sdist
       - run: make test-via-cabal
-
-  build-and-test-with-stack:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
-        uses: haskell/actions/setup@v1
-        with: # lts-17.9
-          ghc-version: '8.10.4'
-          cabal-version: '3.2'
-
-      - uses: actions/cache@v2
-        with:
-          path: ~/.stack
-          key:          v1-${{ runner.os }}-stack-${{ hashFiles('stack.yaml') }}
-          restore-keys: v1-${{ runner.os }}-stack-
-
-      - name: Check out repository
-        uses: actions/checkout@v2
-      - run: make test-via-stack
-
-  build-and-test-with-hugs:
-    runs-on: ubuntu-latest
-    steps:
-      - run: sudo apt-get install hugs
-      - name: Check out repository
-        uses: actions/checkout@v2
-      - run: make hugs-test
+#
+#  build-and-test-with-stack:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
+#        uses: haskell/actions/setup@v1
+#        with: # lts-17.9
+#          ghc-version: '8.10.4'
+#          cabal-version: '3.2'
+#
+#      - uses: actions/cache@v2
+#        with:
+#          path: ~/.stack
+#          key:          v1-${{ runner.os }}-stack-${{ hashFiles('stack.yaml') }}
+#          restore-keys: v1-${{ runner.os }}-stack-
+#
+#      - name: Check out repository
+#        uses: actions/checkout@v2
+#      - run: make test-via-stack
+#
+#  build-and-test-with-hugs:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - run: sudo apt-get install hugs
+#      - name: Check out repository
+#        uses: actions/checkout@v2
+#      - run: make hugs-test
