@@ -11,7 +11,7 @@ jobs:
       matrix:
         include:
           - { ghc: 'latest' , cabal: 'latest' }
-          - { ghc: '9.0'    , cabal: 'latest' }
+          - { ghc: '9.0'    , cabal: '3.4'    }
           - { ghc: '8.10'   , cabal: '3.2'    }
           - { ghc: '8.8'    , cabal: '3.0'    }
           - { ghc: '8.6'    , cabal: '2.4'    }
@@ -29,8 +29,8 @@ jobs:
       - name: Setup Haskell's GHC and Cabal
         uses: haskell/actions/setup@v1
         with:
-          ghc-version:   ${{ matrix.ghc   }}
-          cabal-version: ${{ matrix.cabal }}
+          ghc-version:   '${{ matrix.ghc   }}'
+          cabal-version: '${{ matrix.cabal }}'
 
       - run: ghc   --version
       - run: cabal --version
