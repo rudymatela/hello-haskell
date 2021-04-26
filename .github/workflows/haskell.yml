@@ -58,6 +58,14 @@ jobs:
         with: # lts-17.9
           ghc-version: '8.10.4'
           cabal-version: '3.2'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.stack
+          key: v1-${{ runner.os }}-stack-${{ hashFiles('stack.yaml') }}
+          restore-keys: |
+            v1-${{ runner.os }}-stack-
+
       - name: Check out repository
         uses: actions/checkout@v2
       - run: make test-via-stack
