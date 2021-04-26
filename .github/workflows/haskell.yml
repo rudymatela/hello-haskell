@@ -10,21 +10,20 @@ jobs:
     strategy:
       matrix:
         include:
-          - { ghc: 'latest' , cabal: 'latest' , stack: 'latest' }
-          - { ghc: '8.8'    , cabal: '3.0'    , stack: 'latest' }
-          - { ghc: '8.6'    , cabal: '2.4'    , stack: 'latest' }
+          - { ghc: 'latest' , cabal: 'latest' }
+          - { ghc: '8.8'    , cabal: '3.0'    }
+          - { ghc: '8.6'    , cabal: '2.4'    }
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
       - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
-      - run: echo "with GHC ${{ matrix.ghc }}, Cabal ${{ matrix.cabal }} and Stack #{{ matrix.stack }}"
+      - run: echo "with GHC ${{ matrix.ghc }} and Cabal ${{ matrix.cabal }}"
 
       - name: Setup Haskell's GHC, Cabal and Stack
         uses: haskell/actions/setup@v1
         with:
           ghc-version:   ${{ matrix.ghc   }}
           cabal-version: ${{ matrix.cabal }}
-          stack-version: ${{ matrix.stack }}
 
       - run: ghc   --version
       - run: cabal --version
