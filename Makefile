@@ -67,6 +67,7 @@ legacy-test-via-cabal: # needs similarly named cabal wrappers
 	cabal clean  &&  cabal test
 
 install-dependencies:
+	cabal update
 	cabal v1-install $(ALL_DEPS)
 
 prepare:
