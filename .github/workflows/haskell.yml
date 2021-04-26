@@ -19,7 +19,7 @@ jobs:
 #          - { ghc: '8.2',    cabal: '2.4' } # should be cabal: 2.0
 #          - { ghc: '8.0',    cabal: '2.4' } # should be cabal: 1.24
 #          - { ghc: '7.10',   cabal: '2.4' } # should be cabal: 1.22
-    runs-on: ubuntu-latest
+    container: haskell
     steps:
       - run: echo "Running on ${{ runner.os }} after a ${{ github.event_name }}"
       - run: echo "on branch ${{ github.ref }} of ${{ github.repository }}"
