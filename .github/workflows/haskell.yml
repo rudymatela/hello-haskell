@@ -24,8 +24,8 @@ jobs:
             ~/.cabal
             !~/.cabal/packages
             ~/.ghc
-          key:          v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-${{ hashFiles('hello.cabal') }}
-          restore-keys: v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-
+          key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('hello.cabal') }}
+          restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
