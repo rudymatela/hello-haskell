@@ -9,7 +9,6 @@ EGS =
 BENCHS =
 GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
-HADDOCKFLAGS = $(shell haddock --help | grep -q -- --no-print-missing-docs && echo --no-print-missing-docs)
 HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
 LIB_DEPS = base
 ALL_DEPS = $(LIB_DEPS) leancheck

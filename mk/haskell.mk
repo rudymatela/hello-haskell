@@ -57,6 +57,7 @@ HADDOCK_PKG_NAME = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
 HADDOCK_HLNK_SRC = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
                         || [ $(HADDOCK_MAJOR) -eq 2 -a $(HADDOCK_MINOR) -ge 17 ] \
                         && echo "--hyperlinked-source")
+HADDOCK_NO_PRINT_MISSING_DOCS = $(shell haddock --help | grep -q -- --no-print-missing-docs && echo --no-print-missing-docs)
 
 
 # Implicit rules
@@ -112,6 +113,7 @@ doc/index.html: $(LIB_HSS)
 	  --title=$(PKGNAME) \
 	  $(HADDOCK_PKG_NAME) \
 	  $(HADDOCK_HLNK_SRC) \
+	  $(HADDOCK_NO_PRINT_MISSING_DOCS) \
 	  $(HADDOCKFLAGS)
 
 clean-cabal:
