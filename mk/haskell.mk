@@ -48,9 +48,8 @@ LIB_DEPS ?= base
 ALL_DEPS ?= $(LIB_DEPS)
 
 PKGNAME = $(shell cat *.cabal | grep "^name:"    | sed -e "s/name: *//")
-HADDOCK_PKG_NAME = $(shell haddock --help | grep -q -- --package-name       && echo "--package-name=$(PKGNAME)")
-HADDOCK_HLNK_SRC = $(shell haddock --help | grep -q -- --hyperlinked-source && echo "--hyperlinked-source")
-HADDOCK_NO_PRINT_MISSING_DOCS = $(shell haddock --help | grep -q -- --no-print-missing-docs && echo --no-print-missing-docs)
+
+HADDOCK_HAS = haddock --help | grep -q --
 
 
 # Implicit rules
@@ -104,9 +103,9 @@ doc/index.html: $(LIB_HSS)
 	./mk/haddock-i $(LIB_DEPS) | xargs \
 	$(HADDOCK) --html -odoc $(LIB_HSS) \
 	  --title=$(PKGNAME) \
-	  $(HADDOCK_PKG_NAME) \
-	  $(HADDOCK_HLNK_SRC) \
-	  $(HADDOCK_NO_PRINT_MISSING_DOCS) \
+	  $(shell $(HADDOCK_HAS) --package-name          && echo "--package-name=$(PKGNAME)" ) \
+	  $(shell $(HADDOCK_HAS) --hyperlinked-source    && echo "--hyperlinked-source"      ) \
+	  $(shell $(HADDOCK_HAS) --no-print-missing-docs && echo --no-print-missing-docs     ) \
 	  $(HADDOCKFLAGS)
 
 clean-cabal:
