@@ -19,7 +19,7 @@ that have the same "tooling-style" as this one.
 | project         | status                                                     | on hackage             |
 | --------------- | ---------------------------------------------------------- | ---------------------- |
 | [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                    |
-| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [LeanCheck on Hackage] |
+| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [![LeanCheck on Hackage][leancheck-v]][leancheck-h] |
 | [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [FitSpec on Hackage]   |
 | [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [Speculate on Hackage] |
 
@@ -31,7 +31,8 @@ that have the same "tooling-style" as this one.
 [LeanCheck]:   https://github.com/rudymatela/leancheck
 [leancheck-l]: https://github.com/rudymatela/leancheck/actions/workflows/build.yml
 [leancheck-s]: https://github.com/rudymatela/leancheck/actions/workflows/build.yml/badge.svg
-[LeanCheck on Hackage]: https://hackage.haskell.org/package/leancheck
+[leancheck-h]: https://hackage.haskell.org/package/leancheck
+[leancheck-v]: https://img.shields.io/hackage/v/leancheck.svg
 
 [FitSpec]:   https://github.com/rudymatela/fitspec
 [fitspec-l]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml
