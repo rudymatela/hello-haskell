@@ -111,6 +111,13 @@ update-mk-on-other-projects:
 	./mk/install-on ../tasty-leancheck
 	./mk/install-on ../test-framework-leancheck
 
+update-ci-on-other-projects: \
+	../leancheck/.github/workflows/build.yml
+
+%/.github/workflows/build.yml: .github/workflows/build.yml
+	mkdir -p `dirname $@`
+	cp $< $@
+
 make-depend-on-other-projects:
 	make -C ../leancheck depend
 	make -C ../fitspec depend
