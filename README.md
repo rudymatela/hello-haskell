@@ -16,14 +16,15 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same "tooling-style" as this one.
 
-| project         | status                                                     | on Hackage                                          |
-| --------------- | ---------------------------------------------------------- | --------------------------------------------------- |
-| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                                                 |
-| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [![LeanCheck on Hackage][leancheck-v]][leancheck-h] |
-| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [![FitSpec on Hackage][fitspec-v]][fitspec-h]       |
-| [Express]       | [![Express's Build Status][express-s]][express-l]          | [![Express on Hackage][express-v]][express-h]       |
-| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [![Speculate on Hackage][speculate-v]][speculate-h] |
-| [Conjure]       | [![Conjure's Build Status][conjure-s]][conjure-l]          | [![code-conjure on Hackage][conjure-v]][conjure-h]  |
+| project         | status                                                        | on Hackage                                                |
+| --------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
+| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log]    | N/A                                                       |
+| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]       | [![LeanCheck on Hackage][leancheck-v]][leancheck-h]       |
+| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]             | [![FitSpec on Hackage][fitspec-v]][fitspec-h]             |
+| [Express]       | [![Express's Build Status][express-s]][express-l]             | [![Express on Hackage][express-v]][express-h]             |
+| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]       | [![Speculate on Hackage][speculate-v]][speculate-h]       |
+| [Extrapolate]   | [![Extrapolate's Build Status][extrapolate-s]][extrapolate-l] | [![Extrapolate on Hackage][extrapolate-v]][extrapolate-h] |
+| [Conjure]       | [![Conjure's Build Status][conjure-s]][conjure-l]             | [![code-conjure on Hackage][conjure-v]][conjure-h]        |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -53,6 +54,12 @@ that have the same "tooling-style" as this one.
 [speculate-s]: https://github.com/rudymatela/speculate/actions/workflows/build.yml/badge.svg
 [speculate-h]: https://hackage.haskell.org/package/speculate
 [speculate-v]: https://img.shields.io/hackage/v/speculate.svg
+
+[Extrapolate]:   https://github.com/rudymatela/extrapolate
+[extrapolate-l]: https://github.com/rudymatela/extrapolate/actions/workflows/build.yml
+[extrapolate-s]: https://github.com/rudymatela/extrapolate/actions/workflows/build.yml/badge.svg
+[extrapolate-h]: https://hackage.haskell.org/package/extrapolate
+[extrapolate-v]: https://img.shields.io/hackage/v/extrapolate.svg
 
 [Conjure]:   https://github.com/rudymatela/conjure
 [conjure-l]: https://github.com/rudymatela/conjure/actions/workflows/build.yml

@@ -113,6 +113,7 @@ update-ci-on-other-projects: \
 	../fitspec/.github/workflows/build.yml \
 	../express/.github/workflows/build.yml \
 	../speculate/.github/workflows/build.yml \
+	../extrapolate/.github/workflows/build.yml \
 	../conjure/.github/workflows/build.yml
 
 %/.github/workflows/build.yml: .github/workflows/build.yml
