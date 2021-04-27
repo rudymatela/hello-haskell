@@ -16,12 +16,12 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same "tooling-style" as this one.
 
-| project         | status                                                     | on hackage             |
-| --------------- | ---------------------------------------------------------- | ---------------------- |
-| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                    |
+| project         | status                                                     | on hackage                                          |
+| --------------- | ---------------------------------------------------------- | --------------------------------------------------- |
+| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                                                 |
 | [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [![LeanCheck on Hackage][leancheck-v]][leancheck-h] |
-| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [FitSpec on Hackage]   |
-| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [Speculate on Hackage] |
+| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [![FitSpec on Hackage][fitspec-v]][fitspec-h]       |
+| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [![Speculate on Hackage][speculate-v]][speculate-h] |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -38,11 +38,15 @@ that have the same "tooling-style" as this one.
 [fitspec-l]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml
 [fitspec-s]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml/badge.svg
 [FitSpec on Hackage]: https://hackage.haskell.org/package/fitspec
+[fitspec-h]: https://hackage.haskell.org/package/fitspec
+[fitspec-v]: https://img.shields.io/hackage/v/fitspec.svg
 
 [Speculate]:   https://github.com/rudymatela/speculate
 [speculate-l]: https://github.com/rudymatela/speculate/actions/workflows/build.yml
 [speculate-s]: https://github.com/rudymatela/speculate/actions/workflows/build.yml/badge.svg
 [Speculate on Hackage]: https://hackage.haskell.org/package/speculate
+[speculate-h]: https://hackage.haskell.org/package/speculate
+[speculate-v]: https://img.shields.io/hackage/v/speculate.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
