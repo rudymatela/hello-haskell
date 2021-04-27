@@ -48,15 +48,8 @@ LIB_DEPS ?= base
 ALL_DEPS ?= $(LIB_DEPS)
 
 PKGNAME = $(shell cat *.cabal | grep "^name:"    | sed -e "s/name: *//")
-HADDOCK_VERSION = $(shell $(HADDOCK) --version | grep version | sed -e 's/.*version //;s/,.*//')
-HADDOCK_MAJOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/\..*//')
-HADDOCK_MINOR = $(shell echo $(HADDOCK_VERSION) | sed -e 's/[0-9]*\.\([0-9]*\).[0-9]*/\1/')
-HADDOCK_PKG_NAME = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
-                        || [ $(HADDOCK_MAJOR) -eq 2 -a $(HADDOCK_MINOR) -ge 20 ] \
-                        && echo "--package-name=$(PKGNAME)")
-HADDOCK_HLNK_SRC = $(shell [ $(HADDOCK_MAJOR) -gt 2 ] \
-                        || [ $(HADDOCK_MAJOR) -eq 2 -a $(HADDOCK_MINOR) -ge 17 ] \
-                        && echo "--hyperlinked-source")
+HADDOCK_PKG_NAME = $(shell haddock --help | grep -q -- --package-name       && echo "--package-name=$(PKGNAME)")
+HADDOCK_HLNK_SRC = $(shell haddock --help | grep -q -- --hyperlinked-source && echo "--hyperlinked-source")
 HADDOCK_NO_PRINT_MISSING_DOCS = $(shell haddock --help | grep -q -- --no-print-missing-docs && echo --no-print-missing-docs)
 
 
