@@ -16,12 +16,12 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same "tooling-style" as this one.
 
-| project         | status                                                     |
-| --------------- | ---------------------------------------------------------- |
-| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] |
-| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    |
-| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          |
-| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    |
+| project         | status                                                     | on hackage             |
+| --------------- | ---------------------------------------------------------- | ---------------------- |
+| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                    |
+| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [LeanCheck on Hackage] |
+| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [FitSpec on Hackage]   |
+| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [Speculate on Hackage] |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
