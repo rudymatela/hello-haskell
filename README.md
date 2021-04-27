@@ -16,19 +16,26 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same "tooling-style" as this one.
 
-| project         | status |
-| --------------- | ------ |
+| project         | status                                                     |
+| --------------- | ---------------------------------------------------------- |
 | [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] |
-| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-status]][leancheck-log] |
+| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    |
+| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          |
 
 
-[build-status]: https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml/badge.svg
-[build-log]:    https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml
+[hello-haskell]: https://github.com/rudymatela/hello-haskell
+[build-log]:     https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml
+[build-status]:  https://github.com/rudymatela/hello-haskell/actions/workflows/build.yml/badge.svg
 
-[LeanCheck]:            https://github.com/rudymatela/leancheck
-[leancheck-log]:        https://github.com/rudymatela/leancheck/actions/workflows/build.yml
-[leancheck-status]:     https://github.com/rudymatela/leancheck/actions/workflows/build.yml/badge.svg
+[LeanCheck]:   https://github.com/rudymatela/leancheck
+[leancheck-l]: https://github.com/rudymatela/leancheck/actions/workflows/build.yml
+[leancheck-s]: https://github.com/rudymatela/leancheck/actions/workflows/build.yml/badge.svg
 [LeanCheck on Hackage]: https://hackage.haskell.org/package/leancheck
+
+[FitSpec]:   https://github.com/rudymatela/fitspec
+[fitspec-l]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml
+[fitspec-s]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml/badge.svg
+[FitSpec on Hackage]: https://hackage.haskell.org/package/fitspec
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
