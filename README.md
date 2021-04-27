@@ -21,6 +21,7 @@ that have the same "tooling-style" as this one.
 | [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] |
 | [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    |
 | [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          |
+| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -36,6 +37,11 @@ that have the same "tooling-style" as this one.
 [fitspec-l]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml
 [fitspec-s]: https://github.com/rudymatela/fitspec/actions/workflows/build.yml/badge.svg
 [FitSpec on Hackage]: https://hackage.haskell.org/package/fitspec
+
+[Speculate]:   https://github.com/rudymatela/speculate
+[speculate-l]: https://github.com/rudymatela/speculate/actions/workflows/build.yml
+[speculate-s]: https://github.com/rudymatela/speculate/actions/workflows/build.yml/badge.svg
+[Speculate on Hackage]: https://hackage.haskell.org/package/speculate
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
