@@ -16,7 +16,7 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same "tooling-style" as this one.
 
-| project         | status                                                     | on hackage                                          |
+| project         | status                                                     | on Hackage                                          |
 | --------------- | ---------------------------------------------------------- | --------------------------------------------------- |
 | [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                                                 |
 | [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [![LeanCheck on Hackage][leancheck-v]][leancheck-h] |
