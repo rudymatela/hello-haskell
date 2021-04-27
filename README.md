@@ -21,6 +21,7 @@ that have the same "tooling-style" as this one.
 | [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log] | N/A                                                 |
 | [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]    | [![LeanCheck on Hackage][leancheck-v]][leancheck-h] |
 | [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [![FitSpec on Hackage][fitspec-v]][fitspec-h]       |
+| [Express]       | [![Express's Build Status][express-s]][express-l]          | [![Express on Hackage][express-v]][express-h]       |
 | [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [![Speculate on Hackage][speculate-v]][speculate-h] |
 
 
@@ -40,6 +41,13 @@ that have the same "tooling-style" as this one.
 [FitSpec on Hackage]: https://hackage.haskell.org/package/fitspec
 [fitspec-h]: https://hackage.haskell.org/package/fitspec
 [fitspec-v]: https://img.shields.io/hackage/v/fitspec.svg
+
+[Express]:   https://github.com/rudymatela/express
+[express-l]: https://github.com/rudymatela/express/actions/workflows/build.yml
+[express-s]: https://github.com/rudymatela/express/actions/workflows/build.yml/badge.svg
+[Express on Hackage]: https://hackage.haskell.org/package/express
+[express-h]: https://hackage.haskell.org/package/express
+[express-v]: https://img.shields.io/hackage/v/express.svg
 
 [Speculate]:   https://github.com/rudymatela/speculate
 [speculate-l]: https://github.com/rudymatela/speculate/actions/workflows/build.yml
