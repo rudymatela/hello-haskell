@@ -14,7 +14,7 @@ An example library in [Haskell].  Compilable via:
 
 This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
-that have the same "tooling-style" as this one.
+that have the same build-tooling style as this one.
 
 | project         | status                                                        | on Hackage                                                |
 | --------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
