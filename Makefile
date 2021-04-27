@@ -105,6 +105,7 @@ update-mk-on-other-projects:
 	./mk/install-on ../express
 	./mk/install-on ../speculate
 	./mk/install-on ../extrapolate
+	./mk/install-on ../conjure
 	./mk/install-on ../lc-instances
 	./mk/install-on ../percent-format
 	./mk/install-on ../hspec-leancheck
@@ -112,7 +113,10 @@ update-mk-on-other-projects:
 	./mk/install-on ../test-framework-leancheck
 
 update-ci-on-other-projects: \
-	../leancheck/.github/workflows/build.yml
+	../leancheck/.github/workflows/build.yml \
+	../fitspec/.github/workflows/build.yml \
+	../express/.github/workflows/build.yml \
+	../speculate/.github/workflows/build.yml
 
 %/.github/workflows/build.yml: .github/workflows/build.yml
 	mkdir -p `dirname $@`
@@ -124,6 +128,7 @@ make-depend-on-other-projects:
 	make -C ../express depend
 	make -C ../speculate depend
 	make -C ../extrapolate depend
+	make -C ../conjure depend
 	make -C ../lc-instances depend
 	make -C ../percent-format depend
 	make -C ../hspec-leancheck depend
@@ -136,6 +141,7 @@ make-test-sdist-on-other-projects:
 	make -C ../express test-sdist
 	make -C ../speculate test-sdist
 	make -C ../extrapolate test-sdist
+	make -C ../conjure test-sdist
 	make -C ../lc-instances test-sdist
 	make -C ../percent-format test-sdist
 	make -C ../hspec-leancheck test-sdist
