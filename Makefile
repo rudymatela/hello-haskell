@@ -112,7 +112,8 @@ update-ci-on-other-projects: \
 	../leancheck/.github/workflows/build.yml \
 	../fitspec/.github/workflows/build.yml \
 	../express/.github/workflows/build.yml \
-	../speculate/.github/workflows/build.yml
+	../speculate/.github/workflows/build.yml \
+	../conjure/.github/workflows/build.yml
 
 %/.github/workflows/build.yml: .github/workflows/build.yml
 	mkdir -p `dirname $@`
