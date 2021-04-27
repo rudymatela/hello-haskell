@@ -23,7 +23,7 @@ that have the same "tooling-style" as this one.
 | [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]          | [![FitSpec on Hackage][fitspec-v]][fitspec-h]       |
 | [Express]       | [![Express's Build Status][express-s]][express-l]          | [![Express on Hackage][express-v]][express-h]       |
 | [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]    | [![Speculate on Hackage][speculate-v]][speculate-h] |
-| [Conjure]       | [![Conjure's Build Status][conjure-s]][conjure-l]          | [![Conjure on Hackage][conjure-v]][conjure-h]       |
+| [Conjure]       | [![Conjure's Build Status][conjure-s]][conjure-l]          | [![code-conjure on Hackage][conjure-v]][conjure-h]  |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -57,8 +57,8 @@ that have the same "tooling-style" as this one.
 [Conjure]:   https://github.com/rudymatela/conjure
 [conjure-l]: https://github.com/rudymatela/conjure/actions/workflows/build.yml
 [conjure-s]: https://github.com/rudymatela/conjure/actions/workflows/build.yml/badge.svg
-[conjure-h]: https://hackage.haskell.org/package/conjure
-[conjure-v]: https://img.shields.io/hackage/v/conjure.svg
+[conjure-h]: https://hackage.haskell.org/package/code-conjure
+[conjure-v]: https://img.shields.io/hackage/v/code-conjure.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
