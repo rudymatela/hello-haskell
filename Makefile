@@ -12,7 +12,6 @@ GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
 LIB_DEPS = base
 ALL_DEPS = $(LIB_DEPS) leancheck
-CABAL_INSTALL = $(shell cabal --version | grep -q "version [0-2]\." && echo 'cabal install' || echo 'cabal v1-install')
 
 all: mk/toplibs
 
@@ -67,9 +66,6 @@ legacy-test-via-cabal: # needs similarly named cabal wrappers
 	cabal clean  &&  cabal-ghc-7.10 configure  &&  cabal-ghc-7.10 test
 	cabal clean  &&  cabal-ghc-7.8  configure  &&  cabal-ghc-7.8  test
 	cabal clean  &&  cabal test
-
-install-dependencies:
-	$(CABAL_INSTALL) $(ALL_DEPS)
 
 prepare:
 	cabal update
