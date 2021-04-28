@@ -115,7 +115,8 @@ update-ci-on-other-projects: \
 	../speculate/.github/workflows/build.yml \
 	../extrapolate/.github/workflows/build.yml \
 	../conjure/.github/workflows/build.yml \
-	../lc-instances/.github/workflows/build.yml
+	../lc-instances/.github/workflows/build.yml \
+	../percent-format/.github/workflows/build.yml
 
 %/.github/workflows/build.yml: .github/workflows/build.yml
 	cp $< $@
