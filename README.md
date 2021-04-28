@@ -16,15 +16,16 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same build-tooling style as this one.
 
-| project         | status                                                        | on Hackage                                                |
-| --------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
-| [hello-haskell] | [![hello-haskell's Build Status][build-status]][build-log]    | N/A                                                       |
-| [LeanCheck]     | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]       | [![LeanCheck on Hackage][leancheck-v]][leancheck-h]       |
-| [FitSpec]       | [![FitSpec's Build Status][fitspec-s]][fitspec-l]             | [![FitSpec on Hackage][fitspec-v]][fitspec-h]             |
-| [Express]       | [![Express's Build Status][express-s]][express-l]             | [![Express on Hackage][express-v]][express-h]             |
-| [Speculate]     | [![Speculate's Build Status][speculate-s]][speculate-l]       | [![Speculate on Hackage][speculate-v]][speculate-h]       |
-| [Extrapolate]   | [![Extrapolate's Build Status][extrapolate-s]][extrapolate-l] | [![Extrapolate on Hackage][extrapolate-v]][extrapolate-h] |
-| [Conjure]       | [![Conjure's Build Status][conjure-s]][conjure-l]             | [![code-conjure on Hackage][conjure-v]][conjure-h]        |
+| project               | status                                                                 | on Hackage                                                |
+| --------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------- |
+| [hello-haskell]       | [![hello-haskell's Build Status][build-status]][build-log]             | N/A                                                       |
+| [LeanCheck]           | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]                | [![LeanCheck on Hackage][leancheck-v]][leancheck-h]       |
+| [FitSpec]             | [![FitSpec's Build Status][fitspec-s]][fitspec-l]                      | [![FitSpec on Hackage][fitspec-v]][fitspec-h]             |
+| [Express]             | [![Express's Build Status][express-s]][express-l]                      | [![Express on Hackage][express-v]][express-h]             |
+| [Speculate]           | [![Speculate's Build Status][speculate-s]][speculate-l]                | [![Speculate on Hackage][speculate-v]][speculate-h]       |
+| [Extrapolate]         | [![Extrapolate's Build Status][extrapolate-s]][extrapolate-l]          | [![Extrapolate on Hackage][extrapolate-v]][extrapolate-h] |
+| [Conjure]             | [![Conjure's Build Status][conjure-s]][conjure-l]                      | [![code-conjure on Hackage][conjure-v]][conjure-h]        |
+| [LeanCheck instances] | [![LeanCheck Instances' Build Status][lc-instances-s]][lc-instances-l] | [![LeanCheck on Hackage][lc-instances-v]][lc-instances-h] |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -66,6 +67,12 @@ that have the same build-tooling style as this one.
 [conjure-s]: https://github.com/rudymatela/conjure/actions/workflows/build.yml/badge.svg
 [conjure-h]: https://hackage.haskell.org/package/code-conjure
 [conjure-v]: https://img.shields.io/hackage/v/code-conjure.svg
+
+[LeanCheck Instances]: https://github.com/rudymatela/leancheck-instances
+[lc-instances-l]:      https://github.com/rudymatela/leancheck-instances/actions/workflows/build.yml
+[lc-instances-s]:      https://github.com/rudymatela/leancheck-instances/actions/workflows/build.yml/badge.svg
+[lc-instances-h]:      https://hackage.haskell.org/package/leancheck-instances
+[lc-instances-v]:      https://img.shields.io/hackage/v/leancheck-instances.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
