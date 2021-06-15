@@ -2,6 +2,8 @@
 #
 # bumps versions in a stack.yml to the latest available on Hackage
 #
+# make sure you run cabal update first
+#
 # Copyright 2021  Rudy Matela
 # Distributed under the 3-Clause BSD licence.
 
