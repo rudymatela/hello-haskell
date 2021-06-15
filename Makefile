@@ -121,8 +121,8 @@ update-ci-on-other-projects: \
 	../test-framework-leancheck/.github/workflows/build.yml \
 	../percent-format/.github/workflows/build.yml
 
-%/.github/workflows/build.yml: .github/workflows/build.yml
-	cp $< $@
+%/.github/workflows/build.yml: .github/workflows/build.yml bin/gen-workflows %/*.cabal
+	./bin/gen-workflows $*/*.cabal >$@
 
 bump-stack-depends-on-other-projects:
 	# here, leancheck-0.9.3 would become leancheck-0.9.4 if it is the latest

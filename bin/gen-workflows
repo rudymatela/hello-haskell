@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Given a cabal file, generates a GitHub build file based on tested-with.
+#
+# Copyright 2021  Rudy Matela
+
+errxit() {
+	echo "$0: $1"
+	exit 1
+}
+
+cabal="$1"
+[ -f "$cabal" ] || errxit "cabal file not found"
+
+filter() {
+	grep -q "Hugs==" $cabal &&
+	cat ||
+	grep -B999 test-with-hugs | head -n -2
+}
+
+grep -B999 '^        ghc:$' .github/workflows/build.yml
+
+cat $cabal |
+grep "GHC==" |
+sed -e "s/.*GHC==/          - '/;s/$/'/" |
+grep -v '7.[46]'
+
+grep -A999 "^          - '7.8'$" .github/workflows/build.yml |
+tail -n +2 |
+filter
