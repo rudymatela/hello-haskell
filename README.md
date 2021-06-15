@@ -16,18 +16,20 @@ This project doubles as a GitHub actions dashboard
 for the other Haskell projects I maintain
 that have the same build-tooling style as this one.
 
-| project               | status                                                                 | on Hackage                                                        |
-| --------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [hello-haskell]       | [![hello-haskell's Build Status][build-status]][build-log]             | N/A                                                               |
-| [LeanCheck]           | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]                | [![LeanCheck on Hackage][leancheck-v]][leancheck-h]               |
-| [FitSpec]             | [![FitSpec's Build Status][fitspec-s]][fitspec-l]                      | [![FitSpec on Hackage][fitspec-v]][fitspec-h]                     |
-| [Express]             | [![Express's Build Status][express-s]][express-l]                      | [![Express on Hackage][express-v]][express-h]                     |
-| [Speculate]           | [![Speculate's Build Status][speculate-s]][speculate-l]                | [![Speculate on Hackage][speculate-v]][speculate-h]               |
-| [Extrapolate]         | [![Extrapolate's Build Status][extrapolate-s]][extrapolate-l]          | [![Extrapolate on Hackage][extrapolate-v]][extrapolate-h]         |
-| [Conjure]             | [![Conjure's Build Status][conjure-s]][conjure-l]                      | [![code-conjure on Hackage][conjure-v]][conjure-h]                |
-| [LeanCheck instances] | [![LeanCheck Instances' Build Status][lc-instances-s]][lc-instances-l] | [![LeanCheck on Hackage][lc-instances-v]][lc-instances-h]         |
-| [PercentFormat]       | [![PercentFormat's Build Status][percent-format-s]][percent-format-l]  | [![PercentFormat on Hackage][percent-format-v]][percent-format-h] |
-| [TF-leancheck]        | [![TF-leancheck Build Status][tf-leancheck-s]][tf-leancheck-l]         | [![TF-leancheck on Hackage][tf-leancheck-v]][tf-leancheck-h]      |
+| project               | status                                                                  | on Hackage                                                            |
+| --------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [hello-haskell]       | [![hello-haskell's Build Status][build-status]][build-log]              | N/A                                                                   |
+| [LeanCheck]           | [![LeanCheck's Build Status][leancheck-s]][leancheck-l]                 | [![LeanCheck on Hackage][leancheck-v]][leancheck-h]                   |
+| [FitSpec]             | [![FitSpec's Build Status][fitspec-s]][fitspec-l]                       | [![FitSpec on Hackage][fitspec-v]][fitspec-h]                         |
+| [Express]             | [![Express's Build Status][express-s]][express-l]                       | [![Express on Hackage][express-v]][express-h]                         |
+| [Speculate]           | [![Speculate's Build Status][speculate-s]][speculate-l]                 | [![Speculate on Hackage][speculate-v]][speculate-h]                   |
+| [Extrapolate]         | [![Extrapolate's Build Status][extrapolate-s]][extrapolate-l]           | [![Extrapolate on Hackage][extrapolate-v]][extrapolate-h]             |
+| [Conjure]             | [![Conjure's Build Status][conjure-s]][conjure-l]                       | [![code-conjure on Hackage][conjure-v]][conjure-h]                    |
+| [LeanCheck instances] | [![LeanCheck Instances' Build Status][lc-instances-s]][lc-instances-l]  | [![LeanCheck on Hackage][lc-instances-v]][lc-instances-h]             |
+| [PercentFormat]       | [![PercentFormat's Build Status][percent-format-s]][percent-format-l]   | [![PercentFormat on Hackage][percent-format-v]][percent-format-h]     |
+| [TF-leancheck]        | [![TF-leancheck Build Status][tf-leancheck-s]][tf-leancheck-l]          | [![TF-leancheck on Hackage][tf-leancheck-v]][tf-leancheck-h]          |
+| [hspec-leancheck]     | [![hspec-leancheck Build Status][hspec-leancheck-s]][hspec-leancheck-l] | [![hspec-leancheck on Hackage][hspec-leancheck-v]][hspec-leancheck-h] |
+| [tasty-leancheck]     | [![tasty-leancheck Build Status][tasty-leancheck-s]][tasty-leancheck-l] | [![tasty-leancheck on Hackage][tasty-leancheck-v]][tasty-leancheck-h] |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -87,6 +89,18 @@ that have the same build-tooling style as this one.
 [tf-leancheck-s]: https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml/badge.svg
 [tf-leancheck-h]: https://hackage.haskell.org/package/test-framework-leancheck
 [tf-leancheck-v]: https://img.shields.io/hackage/v/test-framework-leancheck.svg
+
+[hspec-leancheck]:   https://github.com/rudymatela/hspec-leancheck
+[hspec-leancheck-l]: https://github.com/rudymatela/hspec-leancheck/actions/workflows/build.yml
+[hspec-leancheck-s]: https://github.com/rudymatela/hspec-leancheck/actions/workflows/build.yml/badge.svg
+[hspec-leancheck-h]: https://hackage.haskell.org/package/hspec-leancheck
+[hspec-leancheck-v]: https://img.shields.io/hackage/v/hspec-leancheck.svg
+
+[tasty-leancheck]:   https://github.com/rudymatela/tasty-leancheck
+[tasty-leancheck-l]: https://github.com/rudymatela/tasty-leancheck/actions/workflows/build.yml
+[tasty-leancheck-s]: https://github.com/rudymatela/tasty-leancheck/actions/workflows/build.yml/badge.svg
+[tasty-leancheck-h]: https://hackage.haskell.org/package/tasty-leancheck
+[tasty-leancheck-v]: https://img.shields.io/hackage/v/tasty-leancheck.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
