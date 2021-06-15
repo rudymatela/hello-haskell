@@ -82,11 +82,11 @@ that have the same build-tooling style as this one.
 [percent-format-h]: https://hackage.haskell.org/package/percent-format
 [percent-format-v]: https://img.shields.io/hackage/v/percent-format.svg
 
-[test-framework-leancheck]: https://github.com/rudymatela/test-framework-leancheck
-[tf-leancheck-l]:           https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml
-[tf-leancheck-s]:           https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml/badge.svg
-[tf-leancheck-h]:           https://hackage.haskell.org/package/test-framework-leancheck
-[tf-leancheck-v]:           https://img.shields.io/hackage/v/test-framework-leancheck.svg
+[TF-leancheck]:   https://github.com/rudymatela/test-framework-leancheck
+[tf-leancheck-l]: https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml
+[tf-leancheck-s]: https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml/badge.svg
+[tf-leancheck-h]: https://hackage.haskell.org/package/test-framework-leancheck
+[tf-leancheck-v]: https://img.shields.io/hackage/v/test-framework-leancheck.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
