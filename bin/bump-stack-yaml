@@ -26,8 +26,8 @@ latest() {
 }
 
 bump() {
-	head -1 stack.yaml
-	grep -B999 "^extra-deps:$" $stackyaml | tail -n +2
+	resolver=$(grep '^resolver:' stack.yaml)
+	grep -B999 "^extra-deps:$" $stackyaml | sed -e "s/^resolver:.*$$/$resolver/"
 	grep -A999 "^extra-deps:$" $stackyaml | tail -n +2 | while read dash pkg
 	do
 		pkgname=`echo $pkg | sed -e 's/-[0-9.]*$//'`

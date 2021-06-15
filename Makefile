@@ -124,13 +124,21 @@ update-ci-on-other-projects: \
 %/.github/workflows/build.yml: .github/workflows/build.yml bin/gen-workflows %/*.cabal
 	./bin/gen-workflows $*/*.cabal >$@
 
-%/stack.yaml: stack.yaml
+%/stack.yaml: stack.yaml bin/bump-stack-yaml
 	./bin/bump-stack-yaml $@
 
 bump-stack-depends-on-other-projects: \
 	../leancheck/stack.yaml \
 	../fitspec/stack.yaml \
 	../express/stack.yaml \
+	../speculate/stack.yaml \
+	../extrapolate/stack.yaml \
+	../conjure/stack.yaml \
+	../lc-instances/stack.yaml \
+	../percent-format/stack.yaml \
+	../hspec-leancheck/stack.yaml \
+	../tasty-leancheck/stack.yaml \
+	../test-framework-leancheck/stack.yaml \
 	stack.yaml
 
 make-depend-on-other-projects:
