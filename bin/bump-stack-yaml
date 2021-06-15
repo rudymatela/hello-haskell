@@ -2,7 +2,13 @@
 #
 # bumps versions in a stack.yml to the latest available on Hackage
 #
-# make sure you run cabal update first
+# Requirements:
+#
+# 1. run `cabal update` first
+# 2. resolver is on the first line
+# 3. extra-deps is the last thing on the file
+#
+# make sure you run cabal update first.
 #
 # Copyright 2021  Rudy Matela
 # Distributed under the 3-Clause BSD licence.
@@ -20,7 +26,8 @@ latest() {
 }
 
 bump() {
-	grep -B999 "^extra-deps:$" $stackyaml
+	head -1 stack.yaml
+	grep -B999 "^extra-deps:$" $stackyaml | tail -n +2
 	grep -A999 "^extra-deps:$" $stackyaml | tail -n +2 | while read dash pkg
 	do
 		pkgname=`echo $pkg | sed -e 's/-[0-9.]*$//'`
