@@ -28,6 +28,7 @@ extra-source-files: .gitignore
                   , mk/Toplibs.hs
                   , mk/install-on
                   , test/sdist
+                  , bin/gen-workflows
                   , stack.yaml
                   , .github/workflows/build.yml
 tested-with: GHC==9.0
