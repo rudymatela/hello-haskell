@@ -124,11 +124,14 @@ update-ci-on-other-projects: \
 %/.github/workflows/build.yml: .github/workflows/build.yml bin/gen-workflows %/*.cabal
 	./bin/gen-workflows $*/*.cabal >$@
 
-bump-stack-depends-on-other-projects:
-	# here, leancheck-0.9.3 would become leancheck-0.9.4 if it is the latest
-	# available
-	# also, the GHC version of hello-haskell is copied.
-	@echo 'TODO: write me'
+%/stack.yaml: stack.yaml
+	./bin/bump-stack-yaml $@
+
+bump-stack-depends-on-other-projects: \
+	../leancheck/stack.yaml \
+	../fitspec/stack.yaml \
+	../express/stack.yaml \
+	stack.yaml
 
 make-depend-on-other-projects:
 	make -C ../leancheck depend

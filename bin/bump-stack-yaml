@@ -35,4 +35,6 @@ bump() {
 		echo "- $latest"
 	done
 }
-bump $stackyaml | sponge $stackyaml
+grep -q "extra-deps:" $stackyaml &&
+bump $stackyaml | sponge $stackyaml ||
+true
