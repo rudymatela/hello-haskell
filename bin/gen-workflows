@@ -3,6 +3,7 @@
 # Given a cabal file, generates a GitHub build file based on tested-with.
 #
 # Copyright 2021  Rudy Matela
+# Distributed under the 3-Clause BSD licence.
 
 errxit() {
 	echo "$0: $1"
