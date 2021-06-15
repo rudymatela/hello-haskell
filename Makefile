@@ -116,6 +116,9 @@ update-ci-on-other-projects: \
 	../extrapolate/.github/workflows/build.yml \
 	../conjure/.github/workflows/build.yml \
 	../lc-instances/.github/workflows/build.yml \
+	../hspec-leancheck/.github/workflows/build.yml \
+	../tasty-leancheck/.github/workflows/build.yml \
+	../test-framework-leancheck/.github/workflows/build.yml \
 	../percent-format/.github/workflows/build.yml
 
 %/.github/workflows/build.yml: .github/workflows/build.yml
