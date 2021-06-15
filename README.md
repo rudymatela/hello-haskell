@@ -27,6 +27,7 @@ that have the same build-tooling style as this one.
 | [Conjure]             | [![Conjure's Build Status][conjure-s]][conjure-l]                      | [![code-conjure on Hackage][conjure-v]][conjure-h]                |
 | [LeanCheck instances] | [![LeanCheck Instances' Build Status][lc-instances-s]][lc-instances-l] | [![LeanCheck on Hackage][lc-instances-v]][lc-instances-h]         |
 | [PercentFormat]       | [![PercentFormat's Build Status][percent-format-s]][percent-format-l]  | [![PercentFormat on Hackage][percent-format-v]][percent-format-h] |
+| [TF-leancheck]        | [![TF-leancheck Build Status][tf-leancheck-s]][tf-leancheck-l]         | [![TF-leancheck on Hackage][tf-leancheck-v]][tf-leancheck-h]      |
 
 
 [hello-haskell]: https://github.com/rudymatela/hello-haskell
@@ -80,6 +81,12 @@ that have the same build-tooling style as this one.
 [percent-format-s]: https://github.com/rudymatela/percent-format/actions/workflows/build.yml/badge.svg
 [percent-format-h]: https://hackage.haskell.org/package/percent-format
 [percent-format-v]: https://img.shields.io/hackage/v/percent-format.svg
+
+[test-framework-leancheck]: https://github.com/rudymatela/test-framework-leancheck
+[tf-leancheck-l]:           https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml
+[tf-leancheck-s]:           https://github.com/rudymatela/test-framework-leancheck/actions/workflows/build.yml/badge.svg
+[tf-leancheck-h]:           https://hackage.haskell.org/package/test-framework-leancheck
+[tf-leancheck-v]:           https://img.shields.io/hackage/v/test-framework-leancheck.svg
 
 [haskell]: https://www.haskell.org/
 [make]:    https://www.gnu.org/software/make/
