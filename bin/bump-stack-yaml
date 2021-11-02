@@ -20,14 +20,14 @@ errxit() {
 
 stackyaml="$1"
 [ -f "$stackyaml" ] || errxit "must provide a stack.yaml file"
+resolver=$(grep '^resolver:' stack.yaml)
 
 latest() {
 	cabal list --simple-output $1 | grep "^$1 " | sort -V | tail -1 | sed -e 's/ /-/'
 }
 
 bump() {
-	resolver=$(grep '^resolver:' stack.yaml)
-	grep -B999 "^extra-deps:$" $stackyaml | sed -e "s/^resolver:.*$$/$resolver/"
+	grep -B999 "^extra-deps:$" $stackyaml | sed -e "s/^resolver:.*\$/$resolver/"
 	grep -A999 "^extra-deps:$" $stackyaml | tail -n +2 | while read dash pkg
 	do
 		pkgname=`echo $pkg | sed -e 's/-[0-9.]*$//'`
@@ -35,6 +35,9 @@ bump() {
 		echo "- $latest"
 	done
 }
-grep -q "extra-deps:" $stackyaml &&
-bump $stackyaml | sponge $stackyaml ||
-true
+if grep -q "extra-deps:" $stackyaml
+then
+	bump $stackyaml
+else
+	sed -e "s/^resolver:.*\$/$resolver/" $stackyaml
+fi | sponge $stackyaml
