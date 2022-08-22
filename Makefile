@@ -127,6 +127,8 @@ update-ci-on-other-projects: \
 %/stack.yaml: stack.yaml bin/bump-stack-yaml
 	./bin/bump-stack-yaml $@
 
+update-stack-depends-on-other-projects: bump-stack-depends-on-other-projects
+
 bump-stack-depends-on-other-projects: \
 	../leancheck/stack.yaml \
 	../fitspec/stack.yaml \
@@ -140,6 +142,8 @@ bump-stack-depends-on-other-projects: \
 	../tasty-leancheck/stack.yaml \
 	../test-framework-leancheck/stack.yaml \
 	stack.yaml
+
+update-depends-on-other-projects: make-depend-on-other-projects
 
 make-depend-on-other-projects:
 	make -C ../leancheck depend
