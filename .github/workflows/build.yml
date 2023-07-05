@@ -31,6 +31,9 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
+      - run: git  --version
+      - run: make --version
+
       - run: haddock --version || sudo apt-get install ghc-haddock
       - run: ghc     --version
       - run: cabal   --version
@@ -38,10 +41,7 @@ jobs:
       - run: ghc-pkg list
 
       - name: Check out repository
-        uses: actions/checkout@v2
-
-      - run: git status
-      - run: git ls-files
+        uses: actions/checkout@v3
 
       - run: cabal update
       - run: make install-dependencies
@@ -89,6 +89,7 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
+      - run: git --version
       - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
       - run: make --version || apt-get update
       - run: make --version || apt-get install make
@@ -99,7 +100,7 @@ jobs:
       - run: ghc-pkg list
 
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - run: cabal update
       - run: make install-dependencies
@@ -129,7 +130,7 @@ jobs:
       - run: stack --version
 
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: make test-via-stack
 
   test-with-hugs:
@@ -139,5 +140,5 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install hugs
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: make hugs-test
