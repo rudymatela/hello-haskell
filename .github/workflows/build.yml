@@ -1,6 +1,6 @@
 # Builds and tests this Haskell project on "GitHub Actions"
 #
-# 2021  Rudy Matela
+# 2021-2023  Rudy Matela
 #
 # some docs: https://github.com/haskell/actions/tree/main/setup
 name: build
@@ -52,6 +52,7 @@ jobs:
     strategy:
       matrix:
         ghc:
+          - '9.6'
           - '9.4'
           - '9.2'
           - '9.0'
