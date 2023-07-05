@@ -62,7 +62,6 @@ jobs:
           - '8.6'
           - '8.4'
           - '8.2'
-          - '8.0'
           - '7.10'
     runs-on: ubuntu-latest
     needs: build-and-test
