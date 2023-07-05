@@ -24,8 +24,8 @@ grep -B999 '^        ghc:$' .github/workflows/build.yml
 cat $cabal |
 grep "GHC==" |
 sed -e "s/.*GHC==/          - '/;s/$/'/" |
-grep -v '7.[46]'
+grep -v '7.[468]'
 
-grep -A999 "^          - '7.8'$" .github/workflows/build.yml |
+grep -A999 "^          - '7.10'$" .github/workflows/build.yml |
 tail -n +2 |
 filter
