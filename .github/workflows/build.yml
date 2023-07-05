@@ -102,8 +102,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - run: git --version
-
       - run: cabal update
       - run: make install-dependencies
 
