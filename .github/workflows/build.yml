@@ -31,7 +31,6 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
-      - run: git  --version
       - run: make --version
 
       - run: haddock --version || sudo apt-get install ghc-haddock
@@ -42,6 +41,8 @@ jobs:
 
       - name: Check out repository
         uses: actions/checkout@v3
+
+      - run: git --version
 
       - run: cabal update
       - run: make install-dependencies
@@ -89,7 +90,6 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
-      - run: git --version
       - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
       - run: make --version || apt-get update
       - run: make --version || apt-get install make
@@ -101,6 +101,10 @@ jobs:
 
       - name: Check out repository
         uses: actions/checkout@v3
+
+      - run: git --version
+      - run: git status
+      - run: git ls-files
 
       - run: cabal update
       - run: make install-dependencies
