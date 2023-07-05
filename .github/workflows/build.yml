@@ -3,6 +3,8 @@
 # 2021-2023  Rudy Matela
 #
 # some docs: https://github.com/haskell/actions/tree/main/setup
+#
+# The official haskell docker image: https://hub.docker.com/_/haskell
 name: build
 on: [push]
 jobs:
