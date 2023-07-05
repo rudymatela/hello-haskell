@@ -30,7 +30,10 @@ tar -tf $pkg | sort --ignore-case --unique > $tmp/ls-cabal-iu
 diff -rud $tmp/ls-cabal-i $tmp/ls-cabal-iu
 
 # Check if we have a clone of the repo and git is available
-if [ -d .git ] && git --version
+# The check that we can run git ls-files is needed to avoid:
+# fatal: detected dubious ownership in repository at '/__w/.../hello-haskell'
+# on CI.
+if [ -d .git ] && git --version && git ls-files >/dev/null
 then
 	# Test if files included by cabal are the same as files tracked in git.
 	git ls-files                                         | sort > $tmp/ls-git
