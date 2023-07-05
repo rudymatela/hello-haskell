@@ -87,7 +87,9 @@ jobs:
 
       - run: du -hd3 ~/.cabal ~/.ghc || true
 
-      - run: make    --version
+      - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
+      - run: make --version || apt-get update
+      - run: make --version || apt-get install make
 
       - run: ghc     --version
       - run: cabal   --version
