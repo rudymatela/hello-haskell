@@ -40,6 +40,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
+      - run: git status
+      - run: git ls-files
+
       - run: cabal update
       - run: make install-dependencies
 
