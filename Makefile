@@ -97,6 +97,8 @@ mk/toplibs: mk/Toplibs.o
 
 update-ci-and-mk-on-other-projects: update-ci-on-other-projects update-mk-on-other-projects
 
+update-mk-and-ci-on-other-projects: update-ci-on-other-projects update-mk-on-other-projects
+
 update-mk-on-other-projects:
 	./mk/install-on ../leancheck
 	./mk/install-on ../fitspec
