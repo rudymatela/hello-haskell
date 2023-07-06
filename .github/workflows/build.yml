@@ -29,8 +29,8 @@ jobs:
 
       - run: git --version
 
-      - run: cabal update
-      - run: make install-dependencies
+      #- run: cabal update
+      #- run: make install-dependencies
 
       - run: make
       - run: make test
