@@ -10,7 +10,7 @@
 #
 # make sure you run cabal update first.
 #
-# Copyright 2021  Rudy Matela
+# Copyright 2021-2024  Rudy Matela
 # Distributed under the 3-Clause BSD licence.
 
 errxit() {
