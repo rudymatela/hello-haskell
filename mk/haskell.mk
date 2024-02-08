@@ -92,8 +92,11 @@ depend:
 install-dependencies:
 	if [ -n "$(INSTALL_DEPS)" ]; then \
 		cabal update && \
-		$(CABAL_INSTALL) $(INSTALL_DEPS) --avoid-reinstalls; \
+		$(CABAL_INSTALL) $(INSTALL_DEPS) || true; \
 	fi
+	# above, "|| true" is needed for cabal >= 3.10.2
+	# Before, cabal would successfully skip installation
+	#         of already existing packages
 
 # haddock rules
 haddock: doc/index.html
