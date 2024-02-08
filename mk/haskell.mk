@@ -92,7 +92,7 @@ depend:
 install-dependencies:
 	if [ -n "$(INSTALL_DEPS)" ]; then \
 		cabal update && \
-		$(CABAL_INSTALL) $(INSTALL_DEPS); \
+		$(CABAL_INSTALL) $(INSTALL_DEPS) --avoid-reinstalls; \
 	fi
 
 # haddock rules
