@@ -46,6 +46,10 @@ jobs:
 
       - run: make install-dependencies
 
+      - run: du -hd3 ~/.cabal ~/.ghc .cabal || true
+      - run: ls -a ~/
+      - run: ls -a
+
       # 2023-07: some projects were failing with missing base for GHC 9.6.
       #          Here we compile through cabal only provisionally.
       # - run: make
