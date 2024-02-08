@@ -38,6 +38,7 @@ jobs:
           path: |
             ~/.cabal
             !~/.cabal/packages
+            ~/.config/cabal
             ~/.local/state/cabal
             ~/.ghc
           key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
@@ -46,15 +47,13 @@ jobs:
 
       - run: haddock --version || sudo apt-get install ghc-haddock
 
-      # prevents "no cache is being saved" error due to "paths do not exist"
-      - run: mkdir -p ~/.ghc ~/.cabal ~/.cache/cabal ~/.local/state/cabal
-      - run: du -hd3  ~/.ghc ~/.cabal ~/.cache/cabal ~/.local/state/cabal
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/.local/state/cabal || true
 
       - run: ghc-pkg list
       - run: make install-dependencies
       - run: ghc-pkg list
 
-      - run: du -hd3  ~/.ghc ~/.cabal ~/.cache/cabal ~/.local/state/cabal
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/.local/state/cabal || true
 
       # 2023-07: some projects were failing with missing base for GHC 9.6.
       #          Here we compile through cabal only provisionally.
