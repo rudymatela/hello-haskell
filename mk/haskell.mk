@@ -92,7 +92,7 @@ depend:
 install-dependencies:
 	if [ -n "$(INSTALL_DEPS)" ]; then \
 		cabal update && \
-		$(CABAL_INSTALL) $(INSTALL_DEPS) || true; \
+		$(CABAL_INSTALL) $(INSTALL_DEPS); \
 	fi
 	# above, "|| true" is needed for cabal >= 3.10.2
 
