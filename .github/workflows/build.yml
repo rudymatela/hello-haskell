@@ -11,6 +11,8 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
 
       - name: Cache ~/.cabal/packages or ~/.cache/cabal/packages
         uses: actions/cache@v3
@@ -47,9 +49,6 @@ jobs:
       - run: cabal   --version
       - run: haddock --version
       - run: ghc-pkg list
-
-      - name: Check out repository
-        uses: actions/checkout@v3
 
       - run: git --version
 
