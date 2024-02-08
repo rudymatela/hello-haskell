@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Cache ~/.cabal/packages
+      - name: Cache ~/.cabal/packages or ~/.cache/cabal/packages
         uses: actions/cache@v3
         with:
-          path: ~/.cabal/packages
+          path: ~/.cabal/packages ~/.cache/cabal/packages
           key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-packages-
 
@@ -29,7 +29,7 @@ jobs:
           key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-
 
-      - run: du -hd3 ~/.cabal ~/.ghc || true
+      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
 
       - run: make --version
 
@@ -46,7 +46,7 @@ jobs:
 
       - run: make install-dependencies
 
-      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local || true
+      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
       - run: ls -a ~/
       - run: ls -a
 
