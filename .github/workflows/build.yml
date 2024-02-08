@@ -83,7 +83,7 @@ jobs:
     needs: build-and-test
     container: haskell:${{ matrix.ghc }}
     steps:
-      - run: git   --version
+      - run: git   --version || true # git is missing in some images
       - run: make  --version || true # make is missing in some images
       - run: ghc   --version
       - run: cabal --version
