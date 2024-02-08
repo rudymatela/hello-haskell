@@ -66,6 +66,7 @@ jobs:
 
   test-with-ghc:
     strategy:
+      max-parallel: 6
       matrix:
         ghc:
           - '9.8'
