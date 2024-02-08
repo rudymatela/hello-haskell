@@ -139,8 +139,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     steps:
-      - run: false
-
       - name: Setup Haskell's GHC and Cabal as required by current Stackage LTS
         uses: haskell-actions/setup@v2
         with: # lts-19.19
@@ -163,7 +161,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     steps:
-      - run: false
       - run: sudo apt-get update
       - run: sudo apt-get install hugs
       - name: Check out repository
