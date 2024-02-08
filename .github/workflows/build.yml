@@ -11,52 +11,48 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - run: git   --version
+      - run: make  --version
+      - run: ghc   --version
+      - run: cabal --version
+
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Cache ~/.cabal/packages or ~/.cache/cabal/packages
+      # check out needs to happen before cache so that hashing works
+      - run: echo Cache hash: ${{ hashFiles('*.cabal') }}
+
+      - name: Cache cabal (source) packages
         uses: actions/cache@v3
         with:
           path: |
-            ~/.cabal/packages
-            ~/.cache/cabal/packages
+            ~/.cabal/packages       # old
+            ~/.cache/cabal/packages # new
           key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-packages-
 
-      - name: Cache ~/.cabal and ~/.ghc
+      - name: Cache installed cabal packages
         uses: actions/cache@v3
         with:
           path: |
-            ~/.cabal
-            !~/.cabal/packages
+            ~/.cabal             # old
+            !~/.cabal/packages   # old
+            ~/.config/cabal      # new
+            ~/.local/state/cabal # new
             ~/.ghc
           key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
-          restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-
-
-      - run: echo 1st ${{ hashFiles('*.cabal') }}
-      - run: echo 2nd ${{ hashFiles('**/*.cabal') }}
-      - run: echo 3rd ${{ hashFiles('**.cabal') }}
-      - run: echo 4rd ${{ hashFiles('hello.cabal') }}
-      - run: cat hello.cabal
-      - run: false
-
-      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
-
-      - run: make --version
+          restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
+          # restore with exact match has some versions of cabal have trouble updating
 
       - run: haddock --version || sudo apt-get install ghc-haddock
-      - run: ghc     --version
-      - run: cabal   --version
-      - run: haddock --version
+
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/local/state/cabal || true
+
+      - run: ghc-pkg list
+      - run: make install-dependencies
       - run: ghc-pkg list
 
-      - run: git --version
-
-      - run: make install-dependencies
-
-      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
-      - run: ls -a ~/
-      - run: ls -a
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/local/state/cabal || true
 
       # 2023-07: some projects were failing with missing base for GHC 9.6.
       #          Here we compile through cabal only provisionally.
