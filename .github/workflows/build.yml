@@ -31,6 +31,11 @@ jobs:
           key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-
 
+      - run: echo 1st ${{ hashFiles('*.cabal') }}
+      - run: echo 2nd ${{ hashFiles('**/*.cabal') }}
+      - run: echo 3rd ${{ hashFiles('**.cabal') }}
+      - run: cat *.cabal
+
       - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
 
       - run: make --version
