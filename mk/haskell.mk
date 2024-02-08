@@ -94,7 +94,6 @@ install-dependencies:
 		cabal update && \
 		$(CABAL_INSTALL) $(INSTALL_DEPS); \
 	fi
-	# above, "|| true" is needed for cabal >= 3.10.2
 
 # haddock rules
 haddock: doc/index.html
