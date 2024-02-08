@@ -27,8 +27,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ~/.cabal/packages # old
-            ~/.cache/cabal    # new
+            ~/.cabal/packages
+            ~/.cache/cabal
           key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-packages-
 
@@ -36,9 +36,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ~/.cabal             # old
-            !~/.cabal/packages   # old
-            ~/.local/state/cabal # new
+            ~/.cabal
+            !~/.cabal/packages
+            ~/.local/state/cabal
             ~/.ghc
           key:          v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-ghc-latest-${{ hashFiles('*.cabal') }}
