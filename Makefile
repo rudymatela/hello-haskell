@@ -11,7 +11,7 @@ GHCIMPORTDIRS = src
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HUGSIMPORTDIRS = .:./src:./test:/usr/lib/hugs/packages/*
 LIB_DEPS = base
-INSTALL_DEPS = leancheck
+INSTALL_DEPS = leancheck==1.0.0
 
 all: mk/toplibs
 
