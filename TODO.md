@@ -3,6 +3,7 @@ TO DO list for hello-haskell
 
 List of things TO DO for hello-haskell
 
+* trigger build
 
 * Add `Test` module under `tests/`;
 
