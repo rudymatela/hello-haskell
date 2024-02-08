@@ -97,6 +97,12 @@ mk/toplibs: mk/Toplibs.o
 
 update-leancheck: leancheck.update
 
+update-fitspec: fitspec.update
+
+update-express: express.update
+
+update-speculate: speculate.update
+
 %.update: ../%/stack.yaml ../%/.github/workflows/build.yml
 	./mk/install-on ../$*
 
