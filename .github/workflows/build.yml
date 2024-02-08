@@ -46,6 +46,8 @@ jobs:
           # restore with exact match has some versions of cabal have trouble updating
 
       - run: haddock --version || sudo apt-get install ghc-haddock
+      # blank line
+      # blank line for alignment with matrix scripts
 
       - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/.local/state/cabal || true
 
@@ -81,41 +83,51 @@ jobs:
     needs: build-and-test
     container: haskell:${{ matrix.ghc }}
     steps:
-      - run: false
-      - run: false
+      - run: git   --version
+      - run: make  --version || true # make is missing in some images
+      - run: ghc   --version
+      - run: cabal --version
 
-      - name: Cache ~/.cabal/packages
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # check out needs to happen before cache so that hashing works
+      - name: Cache hash
+        run: echo Cache hash = ${{ hashFiles('*.cabal') }}
+
+      - name: Cache cabal (source) packages
         uses: actions/cache@v3
         with:
-          path: ~/.cabal/packages
+          path: |
+            ~/.cabal/packages
+            ~/.cache/cabal
           key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-packages-
 
-      - name: Cache ~/.cabal and ~/.ghc
+      - name: Cache installed cabal packages
         uses: actions/cache@v3
         with:
           path: |
             ~/.cabal
             !~/.cabal/packages
+            ~/.config/cabal
+            ~/.local/state/cabal
             ~/.ghc
           key:          v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-${{ hashFiles('*.cabal') }}
-          restore-keys: v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-
-
-      - run: du -hd3 ~/.cabal ~/.ghc || true
+          restore-keys: v1-${{ runner.os }}-cabal-ghc-${{ matrix.ghc }}-${{ hashFiles('*.cabal') }}
+          # restore with exact match has some versions of cabal have trouble updating
 
       - run: make --version || rm /etc/apt/sources.list.d/*.list # faster update
       - run: make --version || apt-get update
       - run: make --version || apt-get install make
 
-      - run: ghc     --version
-      - run: cabal   --version
-      - run: haddock --version
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/.local/state/cabal || true
+
+      - run: ghc-pkg list
+      - run: make install-dependencies
       - run: ghc-pkg list
 
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - run: make install-dependencies
+      - run: du -hd3 ~/.ghc ~/.cabal ~/.config/cabal ~/.cache/cabal ~/.local/state/cabal || true
 
       - run: make
       - run: make test
