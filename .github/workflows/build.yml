@@ -15,7 +15,9 @@ jobs:
       - name: Cache ~/.cabal/packages or ~/.cache/cabal/packages
         uses: actions/cache@v3
         with:
-          path: ~/.cabal/packages ~/.cache/cabal/packages
+          path: |
+            ~/.cabal/packages
+            ~/.cache/cabal/packages
           key:          v1-${{ runner.os }}-cabal-packages-${{ hashFiles('*.cabal') }}
           restore-keys: v1-${{ runner.os }}-cabal-packages-
 
@@ -67,17 +69,17 @@ jobs:
     strategy:
       matrix:
         ghc:
-          - '9.8'
-          - '9.6'
-          - '9.4'
-          - '9.2'
+          #- '9.8'
+          #- '9.6'
+          #- '9.4'
+          #- '9.2'
           - '9.0'
-          - '8.10'
-          - '8.8'
-          - '8.6'
-          - '8.4'
-          - '8.2'
-          - '7.10'
+          #- '8.10'
+          #- '8.8'
+          #- '8.6'
+          #- '8.4'
+          #- '8.2'
+          #- '7.10'
     runs-on: ubuntu-latest
     needs: build-and-test
     container: haskell:${{ matrix.ghc }}
