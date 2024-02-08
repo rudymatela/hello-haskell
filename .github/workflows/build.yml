@@ -171,13 +171,13 @@ jobs:
           ghc-version: '9.0.2'
           cabal-version: '3.4'
 
-      - run: du -hd3 ~/.stack ~/.ghcup /usr/local/.ghcup || true
+      - run: du -hd2 ~/.stack ~/.ghcup /usr/local/.ghcup || true
 
       - run: stack --version
 
       - run: make test-via-stack
 
-      - run: du -hd3 ~/.stack ~/.ghcup /usr/local/.ghcup || true
+      - run: du -hd2 ~/.stack ~/.ghcup /usr/local/.ghcup || true
 
   test-with-hugs:
     runs-on: ubuntu-latest
