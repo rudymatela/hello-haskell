@@ -46,7 +46,7 @@ jobs:
 
       - run: make install-dependencies
 
-      - run: du -hd3 ~/.cabal ~/.ghc .cabal || true
+      - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local || true
       - run: ls -a ~/
       - run: ls -a
 
