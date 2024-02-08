@@ -95,6 +95,11 @@ hlint:
 mk/toplibs: mk/Toplibs.o
 	touch mk/toplibs
 
+update-leancheck: leancheck.update
+
+%.update: ../%/stack.yaml ../%/.github/workflows/build.yml
+	./mk/install-on ../$*
+
 update-ci-and-mk-on-other-projects: update-ci-on-other-projects update-mk-on-other-projects
 
 update-mk-and-ci-on-other-projects: update-ci-on-other-projects update-mk-on-other-projects
