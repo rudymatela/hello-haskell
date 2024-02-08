@@ -158,7 +158,9 @@ jobs:
       - name: Cache ghcup folder
         uses: actions/cache@v3
         with:
-          path: ~/.ghcup
+          path: |
+            ~/.ghcup
+            /usr/local/.ghcup
           key:          v1-${{ runner.os }}-ghcup-${{ hashFiles('stack.yaml') }}
           restore-keys: v1-${{ runner.os }}-ghcup-
 
