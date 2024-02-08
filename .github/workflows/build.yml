@@ -34,7 +34,9 @@ jobs:
       - run: echo 1st ${{ hashFiles('*.cabal') }}
       - run: echo 2nd ${{ hashFiles('**/*.cabal') }}
       - run: echo 3rd ${{ hashFiles('**.cabal') }}
-      - run: cat *.cabal
+      - run: echo 4rd ${{ hashFiles('hello.cabal') }}
+      - run: cat hello.cabal
+      - run: false
 
       - run: du -hd3 ~/.cabal ~/.ghc .cabal ~/.config ~/.cache ~/.local ~/.cache/cabal || true
 
