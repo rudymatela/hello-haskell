@@ -103,6 +103,20 @@ update-express: express.update
 
 update-speculate: speculate.update
 
+update-extrapolate: extrapolate.update
+
+update-conjure: conjure.update
+
+update-lc-instances: update-lc-instances.update
+
+update-percent-format: update-percent-format.update
+
+update-hspec-leancheck: update-hspec-leancheck.update
+
+update-tasty-leancheck: update-tasty-leancheck.update
+
+update-test-framework-leancheck: update-test-framework-leancheck.update
+
 %.update: ../%/stack.yaml ../%/.github/workflows/build.yml
 	./mk/install-on ../$*
 
