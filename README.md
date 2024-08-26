@@ -9,6 +9,8 @@ An example library in [Haskell].  Compilable via:
 * [cabal]: `cabal build && cabal test`;
 * [stack]: `stack build && stack test`.
 
+... and under CI on GitHub actions.
+
 
 ### Dashboard
 
