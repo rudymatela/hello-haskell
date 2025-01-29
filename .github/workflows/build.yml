@@ -69,7 +69,6 @@ jobs:
       max-parallel: 6
       matrix:
         ghc:
-          - '9.12'
           - '9.10'
           - '9.8'
           - '9.6'
