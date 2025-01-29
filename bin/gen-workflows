@@ -24,6 +24,7 @@ grep -B999 '^        ghc:$' .github/workflows/build.yml
 cat $cabal |
 grep "GHC==" |
 sed -e "s/.*GHC==/          - '/;s/$/'/" |
+sed -e "s/9\.10/9.10-bullseye/" | # docker/_/haskell not consistent... :-(
 grep -v '8.[642]' |
 grep -v '7\.[024681]'
 
